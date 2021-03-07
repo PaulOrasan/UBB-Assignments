@@ -4,4 +4,6 @@
 void runTests();
 void runTestsProductEntity();
 void runTestsRepository();
+void runTestsService();
+void runTestsValidation();
 #endif

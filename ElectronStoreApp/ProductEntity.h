@@ -14,17 +14,17 @@ typedef struct {
 	int quantity;
 }Product;
 
-void initialiseProduct(Product*);
-int getUniqueID(Product);
+void initialiseProduct(Product*, int, char*, char*, char*, double, int);
+int getUniqueID(Product*);
 void setUniqueID(Product*, int);
-char* getType(Product);
+char* getType(Product*);
 void setType(Product*, char[]);
-char* getProducer(Product);
+char* getProducer(Product*);
 void setProducer(Product*, char[]);
-char* getModel(Product);
+char* getModel(Product*);
 void setModel(Product*, char[]);
-double getPrice(Product);
+double getPrice(Product*);
 void setPrice(Product*, double);
-int getQuantity(Product);
+int getQuantity(Product*);
 void setQuantity(Product*, int);
 #endif

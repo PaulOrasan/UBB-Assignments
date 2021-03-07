@@ -1,24 +1,24 @@
 #include "ProductEntity.h"
 #include <string.h>
 
-void initialiseProduct(Product* x) {
+void initialiseProduct(Product* x, int id, char type[], char producer[], char model[], double price, int quantity) {
 	/*
 		Initialises a variable of type Product with default values;
 	*/
-	x->uniqueIdentifier = 0;
-	strcpy(x->model, "");
-	x->price = 0.0;
-	strcpy(x->producer, "");
-	strcpy(x->type, "");
-	x->quantity = 0;
+	x->uniqueIdentifier = id;
+	strcpy(x->model, model);
+	x->price = price;
+	strcpy(x->producer, producer);
+	strcpy(x->type, type);
+	x->quantity = quantity;
 }
-int getUniqueID(Product x) {
+int getUniqueID(Product* x) {
 	/*
 		Finds the ID of a product
-		x - variable of type Product
+		x - address of a variable of type Product
 		Returns the id of that variable
 	*/
-	return x.uniqueIdentifier;
+	return x->uniqueIdentifier;
 }
 void setUniqueID(Product* x, int newID) {
 	/*
@@ -28,9 +28,14 @@ void setUniqueID(Product* x, int newID) {
 	*/
 	x->uniqueIdentifier = newID;
 }
-char* getType(Product x) {
+char* getType(Product* x) {
 
-	return &x.type;
+	/*
+		Function that finds the type of a product
+		x - address of a variable of type Product
+		returns the address to a C-style string
+	*/
+	return x->type;
 }
 void setType(Product* x, char newType[])
 {
@@ -41,13 +46,13 @@ void setType(Product* x, char newType[])
 	*/
 	strcpy(x->type, newType);
 }
-char* getProducer(Product x) {
+char* getProducer(Product* x) {
 	/*
 		Finds the producer of a product
-		x - variable of type Product
+		x - address of a variable of type Product
 		Returns a pointer to the producer of that variable
 	*/
-	return &x.producer;
+	return x->producer;
 }
 void setProducer(Product* x, char newProducer[]) {
 	/*
@@ -57,13 +62,13 @@ void setProducer(Product* x, char newProducer[]) {
 	*/
 	strcpy(x->producer, newProducer);
 }
-char* getModel(Product x) {
+char* getModel(Product* x) {
 	/*
 		Finds the model of a product
-		x - variable of type Product
+		x - address of a variable of type Product
 		Returns a pointer to the model of that variable
 	*/
-	return &x.model;
+	return x->model;
 }
 void setModel(Product* x, char newModel[]) {
 	/*
@@ -73,13 +78,13 @@ void setModel(Product* x, char newModel[]) {
 	*/
 	strcpy(x->model, newModel);
 }
-double getPrice(Product x) {
+double getPrice(Product* x) {
 	/*
 		Finds the price of a product
-		x - variable of type Product
+		x - address of a variable of type Product
 		Returns a double value which represents the price of that product
 	*/
-	return x.price;
+	return x->price;
 }
 void setPrice(Product* x, double newPrice) {
 	/*
@@ -89,13 +94,13 @@ void setPrice(Product* x, double newPrice) {
 	*/
 	x->price = newPrice;
 }
-int getQuantity(Product x) {
+int getQuantity(Product* x) {
 	/*
 		Finds the quantity of a product
-		x - variable of type Product
+		x - address of a variable of type Product
 		Returns an int value which represents the quantity of that product
 	*/
-	return x.quantity;
+	return x->quantity;
 }
 void setQuantity(Product* x, int newQuantity) {
 	/*
@@ -104,4 +109,26 @@ void setQuantity(Product* x, int newQuantity) {
 		newQuantity - integer which represents the new quantity we must assign
 	*/
 	x->quantity = newQuantity;
+}
+
+int equality(Product* a, Product* b) {
+	/*
+		Tests if two products are equal
+		a - variable of type Product
+		b - variable of type Product
+		Returns 1 if a is considered equal to b or 0 otherwise
+	*/
+	// bad looking code but gets the job done
+	double epsilon = 0.00001;
+	int value = 1 && getUniqueID(a) == getUniqueID(b) && getQuantity(a) == getQuantity(b) && getPrice(a) - getPrice(b) > -epsilon && getPrice(a) - getPrice(b) < epsilon;
+	char* x = getType(a);
+	char* y = getType(b);
+	value = value && (strcmp(x, y) == 0);
+	x = getProducer(a);
+	y = getProducer(b);
+	value = value && (strcmp(x, y) == 0);
+	x = getModel(a);
+	y = getModel(b);
+	value = value && (strcmp(x, y) == 0);
+	return value;
 }

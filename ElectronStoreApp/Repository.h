@@ -12,5 +12,5 @@ int addProduct(Repository*, Product);
 int updateRepository(Repository*, int, int, ...);
 int deleteProduct(Repository*, int);
 int size(Repository*);
-
+void getAll(Repository*, Product*);
 #endif

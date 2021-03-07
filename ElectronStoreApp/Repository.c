@@ -14,8 +14,8 @@ int addProduct(Repository* repo, Product prod) {
 		Returns 1 if a new product was added to the repository, 0 if the product already existed and -1 if the repo's capacity was reached
 	*/
 	for (int index = 0; index < repo->numberOfItems; index++) {
-		if (getUniqueID(repo->list[index]) == getUniqueID(prod)) {								// if the product already exist
-			updateRepository(repo, getUniqueID(prod), QUANTITY_UPDATE_CODE, getQuantity(prod)); // we update the quantity
+		if (getUniqueID(&repo->list[index]) == getUniqueID(&prod)) {								// if the product already exist
+			updateRepository(repo, getUniqueID(&prod), QUANTITY_UPDATE_CODE, getQuantity(&prod)); // we update the quantity
 			return 0;
 		}																						
 	}
@@ -45,10 +45,10 @@ int updateRepository(Repository* repo, int id, int code, ...) {
 	int found = 0;
 	va_list parameters;			// stores the variadic parameters of the function
 	for (int index = 0; index < repo->numberOfItems; index++) {
-		if (getUniqueID(repo->list[index]) == id) {
+		if (getUniqueID(&repo->list[index]) == id) {
 			found = 1;
-			double newPrice = getPrice(repo->list[index]);
-			int newQuantity = getQuantity(repo->list[index]);
+			double newPrice = getPrice(&repo->list[index]);
+			int newQuantity = getQuantity(&repo->list[index]);
 			va_start(parameters, code);
 			if (code == 1) {
 				newPrice = va_arg(parameters, double);
@@ -76,7 +76,7 @@ int deleteProduct(Repository* repo, int id) {
 	*/
 	int found = 0;
 	for (int index = 0; index < repo->numberOfItems; index++) {
-		if (getUniqueID(repo->list[index]) == id) {
+		if (getUniqueID(&repo->list[index]) == id) {
 			found = 1;
 			for (int deleteIndex = index; deleteIndex < repo->numberOfItems - 1; deleteIndex++) {
 				repo->list[deleteIndex] = repo->list[deleteIndex + 1];
@@ -93,4 +93,15 @@ int size(Repository* repo) {
 		Returns an integer which represents the size of the repository
 	*/
 	return repo->numberOfItems;
+}
+
+void getAll(Repository* repo, Product* newList) {
+	/*
+		Function that creates a copy of the contents of the repository
+		repo -  address to a variable of type Repository 
+		newList - address to an array of Products where we will store the contents of the repository
+	*/
+	for (int index = 0; index < repo->numberOfItems; index++) {
+		newList[index] = repo->list[index];
+	}
 }
