@@ -1,0 +1,121 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.28.29337.0"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x002CB1D0 -il C:\\Users\\orasa\\AppData\\Local\\Temp\\_CL_df513970ast -typedil -f Error.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1928 -D_MSC_FULL_VER=192829337 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -nologo -W 4 -WX -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -Fox64\\Debug\\Error.obj -Fdx64\\Debug\\vc142.pdb -Gd -analyze:projectdirectory E:\\Facultate\\Anul 1\\Semestrul 2\\OOP\\Lab6-7\\DrugStoreApp\\DrugStoreApp -analyze:rulesetdirectory ;E:\\IDEs\\Visual Studio\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset rules.ruleset -analyze:quiet -analyze:plugin E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\include -I E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\atlmfc\\include -I E:\\IDEs\\Visual Studio\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\cppwinrt -I E:\\Facultate\\Anul 1\\Semestrul 2\\OOP\\Lab6-7\\DrugStoreApp\\DrugStoreApp\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/validation.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/validation.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/drug.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/error.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/ui.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/ui.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/service.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/repository.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///E:/Facultate/Anul 1/Semestrul 2/OOP/Lab6-7/DrugStoreApp/DrugStoreApp/Tester.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/tester.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/service.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///e:/facultate/anul 1/semestrul 2/oop/lab6-7/drugstoreapp/drugstoreapp/error.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        }
+      ]
+    }
+  ]
+}

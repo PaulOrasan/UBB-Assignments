@@ -1,0 +1,4 @@
+﻿  Drug.cpp
+  DrugStoreApp.vcxproj -> E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\x64\Debug\DrugStoreApp.exe
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Drug.cpp(4): warning C26432: If you define or delete any default operation in the type 'class Drug', define or delete them all (c.21).
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(15): warning C26497: The function 'equalDoubles' could be marked constexpr if compile-time evaluation is desired (f.4).

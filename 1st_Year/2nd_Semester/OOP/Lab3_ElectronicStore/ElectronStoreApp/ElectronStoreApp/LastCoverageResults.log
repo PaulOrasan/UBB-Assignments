@@ -1,0 +1,21 @@
+[2021-03-15 10:34:19] [info] Start Program:
+Path:"E:\\Facultate\\Anul 1\\Semestrul 2\\OOP\\Lab3\\ElectronStoreApp\\Debug\\ElectronStoreApp.exe"
+Arguments:
+Working directory: "E:\\Facultate\\Anul 1\\Semestrul 2\\OOP\\Lab3\\ElectronStoreApp\\ElectronStoreApp\\"
+Modules: Selected: E:\Facultate\Anul 1\Semestrul 2\OOP\Lab3\ElectronStoreApp\Debug\ElectronStoreApp.exe Excluded: 
+Sources: Selected: E:\Facultate\Anul 1\Semestrul 2\OOP\Lab3\ElectronStoreApp\ElectronStoreApp Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\orasa\AppData\Local\Temp\1flqr35b.13i 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2021-03-15 10:34:19] [info] Module: E:\Facultate\Anul 1\Semestrul 2\OOP\Lab3\ElectronStoreApp\Debug\ElectronStoreApp.exe is selected because it matches selected pattern: E:\Facultate\Anul 1\Semestrul 2\OOP\Lab3\ElectronStoreApp\Debug\ElectronStoreApp.exe
+[2021-03-15 10:34:19] [info] ----------------------------------------------------
+[2021-03-15 10:34:19] [info] Coverage binary generated in file: C:\Users\orasa\AppData\Local\Temp\1flqr35b.13i
+[2021-03-15 10:34:19] [info] ----------------------------------------------------
