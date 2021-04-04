@@ -97,8 +97,9 @@ void UI::uiShowAllDrugs() {
 		return;
 	}
 	std::cout << "The list of drugs:\n";
-	for (const auto& i : serv.getDrugs()) {
-		showDrug(i);
+	const Vector<Drug>& v = serv.getDrugs();
+	for (Iterator<Drug> it{ v }; it.valid(); it.next()) {
+		showDrug(it.getElement());
 	}
 }
 void UI::showDrug(const Drug& drug) {

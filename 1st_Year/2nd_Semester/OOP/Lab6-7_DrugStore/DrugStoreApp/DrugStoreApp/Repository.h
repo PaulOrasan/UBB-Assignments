@@ -1,12 +1,12 @@
 #ifndef REPOSITORY_H
 #define REPOSITORY_H
-#include <vector>
+#include "vector.h"
 #include "Drug.h"
 #include "Error.h"
 class Repository
 {
 	private:
-		std::vector<Drug> drugArray;
+		Vector<Drug> drugArray;
 	public:
 		/*
 		* implicit constructor for the class Repository
@@ -47,7 +47,7 @@ class Repository
 		* id - integer which represents the id of the drug we are searching for
 		* Throws RepoException if the object doesn't exist in the repository
 		*/
-		const std::vector<Drug>& getDrugs() const noexcept;
+		const Vector<Drug>& getDrugs() const noexcept;
 
 		size_t getSize() const noexcept;
 };

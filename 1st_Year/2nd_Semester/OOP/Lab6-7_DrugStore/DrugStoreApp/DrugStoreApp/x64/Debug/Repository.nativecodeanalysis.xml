@@ -1,2 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DEFECTS></DEFECTS>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+      <FILENAME>vector.h</FILENAME>
+      <LINE>49</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>26455</DEFECTCODE>
+    <DESCRIPTION>Default constructor may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vector&lt;Drug&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$Vector@VDrug@@@@QEAA@XZ</DECORATED>
+    <FUNCLINE>49</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+      <FILENAME>vector.h</FILENAME>
+      <LINE>68</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>Vector&lt;Drug&gt;::append</FUNCTION>
+    <DECORATED>?append@?$Vector@VDrug@@@@QEAAXAEBVDrug@@@Z</DECORATED>
+    <FUNCLINE>65</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+      <FILENAME>vector.h</FILENAME>
+      <LINE>81</LINE>
+      <COLUMN>30</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>Vector&lt;Drug&gt;::erase</FUNCTION>
+    <DECORATED>?erase@?$Vector@VDrug@@@@QEAAXAEBV?$Iterator@VDrug@@@@@Z</DECORATED>
+    <FUNCLINE>73</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+      <FILENAME>vector.h</FILENAME>
+      <LINE>81</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>Vector&lt;Drug&gt;::erase</FUNCTION>
+    <DECORATED>?erase@?$Vector@VDrug@@@@QEAAXAEBV?$Iterator@VDrug@@@@@Z</DECORATED>
+    <FUNCLINE>73</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+      <FILENAME>vector.h</FILENAME>
+      <LINE>81</LINE>
+      <COLUMN>27</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Vector&lt;Drug&gt;::erase</FUNCTION>
+    <DECORATED>?erase@?$Vector@VDrug@@@@QEAAXAEBV?$Iterator@VDrug@@@@@Z</DECORATED>
+    <FUNCLINE>73</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+      <FILENAME>vector.h</FILENAME>
+      <LINE>94</LINE>
+      <COLUMN>37</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>Iterator&lt;Drug&gt;::getElement</FUNCTION>
+    <DECORATED>?getElement@?$Iterator@VDrug@@@@QEBAAEBVDrug@@XZ</DECORATED>
+    <FUNCLINE>92</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+      <FILENAME>vector.h</FILENAME>
+      <LINE>104</LINE>
+      <COLUMN>30</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>Iterator&lt;Drug&gt;::setElement</FUNCTION>
+    <DECORATED>?setElement@?$Iterator@VDrug@@@@QEBAXAEBVDrug@@@Z</DECORATED>
+    <FUNCLINE>102</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+      <FILENAME>vector.h</FILENAME>
+      <LINE>60</LINE>
+      <COLUMN>29</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>Vector&lt;Drug&gt;::resize</FUNCTION>
+    <DECORATED>?resize@?$Vector@VDrug@@@@AEAAXXZ</DECORATED>
+    <FUNCLINE>56</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+      <FILENAME>vector.h</FILENAME>
+      <LINE>60</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>Vector&lt;Drug&gt;::resize</FUNCTION>
+    <DECORATED>?resize@?$Vector@VDrug@@@@AEAAXXZ</DECORATED>
+    <FUNCLINE>56</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

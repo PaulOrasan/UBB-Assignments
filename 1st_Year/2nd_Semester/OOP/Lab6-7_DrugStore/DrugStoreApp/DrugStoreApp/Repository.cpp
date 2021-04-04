@@ -1,30 +1,34 @@
 #include "Repository.h"
-#include <algorithm>
+
 const std::string RepoException::drugExists{ "Drug already exists!" };
 const std::string RepoException::drugDoesntExist{ "Drug doesn't exist!" };
+
 void Repository::addDrug(const Drug& newDrug) {
-	if (find(drugArray.begin(), drugArray.end(), newDrug) != drugArray.end()) {
-		throw RepoException{ RepoException::drugExists };
-	}
-	drugArray.push_back(newDrug);
+	drugArray.append(newDrug);
 }
 void Repository::deleteDrug(int id) {
-	Drug aux;
-	aux.setID(id);
-	auto it = find(drugArray.begin(), drugArray.end(), aux);
-	if (it == drugArray.end()) {
-		throw RepoException{ RepoException::drugDoesntExist };
+	Iterator<Drug> it{drugArray};
+	while (it.valid()) {
+		if (it.getElement().getID() == id) {
+			drugArray.erase(it);
+			return;
+		}
+		it.next();
 	}
-	drugArray.erase(it);
+	throw RepoException{ RepoException::drugDoesntExist };
 }
 void Repository::updateDrug(int id, double newPrice) {
-	Drug aux;
-	aux.setID(id);
-	auto it = find(drugArray.begin(), drugArray.end(), aux);
-	if (it == drugArray.end()) {
-		throw RepoException{ RepoException::drugDoesntExist };
+	Iterator<Drug> it{ drugArray };
+	while (it.valid()) {
+		if (it.getElement().getID() == id) {
+			Drug newDrug = it.getElement();
+			newDrug.setPrice(newPrice);
+			it.setElement(newDrug);
+			return;
+		}
+		it.next();
 	}
-	it->setPrice(newPrice);
+	throw RepoException{ RepoException::drugDoesntExist };
 }
 
 const Drug& Repository::searchDrug(int id) const {
@@ -33,16 +37,19 @@ const Drug& Repository::searchDrug(int id) const {
 		throw RepoException{ RepoException::drugDoesntExist };
 	}
 	return *it;*/
-	for (const auto& it : drugArray) {
-		if (it.getID() == id)
-			return it;
+	Iterator<Drug> it{ drugArray };
+	while (it.valid()) {
+		if (it.getElement().getID() == id) {
+			return it.getElement();
+		}
+		it.next();
 	}
 	throw RepoException{ RepoException::drugDoesntExist };
 }
 
-const std::vector<Drug>& Repository::getDrugs() const noexcept {
+const Vector<Drug>& Repository::getDrugs() const noexcept {
 	return drugArray;
 }
 size_t Repository::getSize() const noexcept {
-	return drugArray.size();
+	return drugArray.length();
 }

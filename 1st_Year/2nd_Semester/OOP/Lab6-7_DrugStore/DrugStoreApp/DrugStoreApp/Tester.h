@@ -33,6 +33,14 @@ class Tester {
 			*/
 			void testValidatePrice();
 		}validationTester;
+
+		class VectorTester {
+		public:
+			void runTests();
+		private:
+			void testAppend();
+			void testErase();
+		}vectorTester;
 		class RepositoryTester {
 			public:
 				/*

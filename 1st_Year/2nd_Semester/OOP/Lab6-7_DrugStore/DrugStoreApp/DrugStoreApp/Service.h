@@ -53,7 +53,7 @@ class Service
 		* Method for getting all the drugs from the repository
 		* Returns a constant reference to the list of drugs from the repository
 		*/
-		const std::vector<Drug>& getDrugs() const noexcept;
+		const Vector<Drug>& getDrugs() const noexcept;
 
 		/*
 		* Method for finding the number of elements from the repository

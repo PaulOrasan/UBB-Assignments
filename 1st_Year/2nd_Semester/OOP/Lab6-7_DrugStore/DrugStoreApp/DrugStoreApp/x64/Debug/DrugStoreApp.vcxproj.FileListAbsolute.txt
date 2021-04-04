@@ -1,2 +1,4 @@
 E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\x64\Debug\DrugStoreApp.exe.lastcodeanalysissucceeded
 E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\x64\Debug\NativeCodeAnalysis.read.1.tlog
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\x64\Debug\DrugStoreApp.exe.lastcodeanalysissucceeded
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\x64\Debug\NativeCodeAnalysis.read.1.tlog

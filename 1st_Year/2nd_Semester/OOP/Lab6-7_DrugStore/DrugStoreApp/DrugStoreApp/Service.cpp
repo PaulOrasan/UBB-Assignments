@@ -34,7 +34,7 @@ const Drug& Service::findDrug(int id) const {
 		throw ServiceException{ re.getMessage() };
 	}
 }
-const std::vector<Drug>& Service::getDrugs() const noexcept {
+const Vector<Drug>& Service::getDrugs() const noexcept {
 	return repo.getDrugs();
 }
 size_t Service::getSize() const noexcept {

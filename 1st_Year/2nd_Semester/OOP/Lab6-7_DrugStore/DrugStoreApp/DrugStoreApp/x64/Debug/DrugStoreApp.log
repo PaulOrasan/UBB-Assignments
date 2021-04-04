@@ -1,4 +1,20 @@
-﻿  Drug.cpp
-  DrugStoreApp.vcxproj -> E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\x64\Debug\DrugStoreApp.exe
-E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Drug.cpp(4): warning C26432: If you define or delete any default operation in the type 'class Drug', define or delete them all (c.21).
-E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(15): warning C26497: The function 'equalDoubles' could be marked constexpr if compile-time evaluation is desired (f.4).
+﻿  DrugStoreApp.cpp
+  Repository.cpp
+  Service.cpp
+  Tester.cpp
+  UI.cpp
+  vector.cpp
+  Running Code Analysis for C/C++...
+  Generating Code...
+  DrugStoreApp.vcxproj -> E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\x64\Debug\DrugStoreApp.exe
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Drug.cpp(4): warning C26432: If you define or delete any default operation in the type 'class Drug', define or delete them all (c.21).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(49): warning C26455: Default constructor may not throw. Declare it 'noexcept' (f.6).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(68): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(81): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(81): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(81): warning C26451: Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(94): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(104): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(60): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(60): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Tester.cpp(16): warning C26497: The function 'equalDoubles' could be marked constexpr if compile-time evaluation is desired (f.4).
