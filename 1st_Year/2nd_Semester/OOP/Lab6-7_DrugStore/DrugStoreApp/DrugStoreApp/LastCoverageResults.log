@@ -1,21 +1,21 @@
-[2021-03-29 10:39:50] [info] Start Program:
-Path:"E:\\Facultate\\Anul 1\\Semestrul 2\\OOP\\Lab6-7\\DrugStoreApp\\x64\\Debug\\DrugStoreApp.exe"
+[2021-04-05 10:37:13] [info] Start Program:
+Path:"E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab6-7_DrugStore\\DrugStoreApp\\x64\\Debug\\DrugStoreApp.exe"
 Arguments:
-Working directory: "E:\\Facultate\\Anul 1\\Semestrul 2\\OOP\\Lab6-7\\DrugStoreApp\\DrugStoreApp\\"
-Modules: Selected: E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\x64\Debug\DrugStoreApp.exe Excluded: 
-Sources: Selected: E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp Excluded: 
+Working directory: "E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab6-7_DrugStore\\DrugStoreApp\\DrugStoreApp"
+Modules: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\x64\Debug\DrugStoreApp.exe Excluded: 
+Sources: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp Excluded: 
 Log Level: Normal
 Cover Children: 0
 Aggregate by file: 1
 Continue after C++ exception: 0
 Optimized build support: 0
-Export: binary C:\Users\orasa\AppData\Local\Temp\svx0swll.ek0 
+Export: binary C:\Users\orasa\AppData\Local\Temp\xd0l1cvc.4z1 
 Input coverage: 
 Unified diff: 
 Excluded line regular expressions: 
 Substitute pdb source paths: 
 
-[2021-03-29 10:39:50] [info] Module: E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\x64\Debug\DrugStoreApp.exe is selected because it matches selected pattern: E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\x64\Debug\DrugStoreApp.exe
-[2021-03-29 10:39:50] [info] ----------------------------------------------------
-[2021-03-29 10:39:50] [info] Coverage binary generated in file: C:\Users\orasa\AppData\Local\Temp\svx0swll.ek0
-[2021-03-29 10:39:50] [info] ----------------------------------------------------
+[2021-04-05 10:37:13] [info] Module: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\x64\Debug\DrugStoreApp.exe is selected because it matches selected pattern: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\x64\Debug\DrugStoreApp.exe
+[2021-04-05 10:37:13] [info] ----------------------------------------------------
+[2021-04-05 10:37:13] [info] Coverage binary generated in file: C:\Users\orasa\AppData\Local\Temp\xd0l1cvc.4z1
+[2021-04-05 10:37:13] [info] ----------------------------------------------------

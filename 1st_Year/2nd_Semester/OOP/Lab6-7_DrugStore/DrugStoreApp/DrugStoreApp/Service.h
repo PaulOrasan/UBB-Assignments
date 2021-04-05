@@ -60,9 +60,36 @@ class Service
 		* Returns an integer which represents the number of elements from the repository
 		*/
 		size_t getSize() const noexcept;
+
+		/*
+		* Method that sorts the contents of the repository based on a criteria
+		* criteria - const reference to a string which describes the type of sorting used
+		* Returns a Vector of Drug elements which represents a copy of the repository that was also sorted
+		* Throws ServiceException if the criteria is unrecognisable
+		*/
+		Vector<Drug> sort(const std::string& criteria) const;
+
+		/*
+		* Method that filters the contents of the repository based on price
+		* condition - double variable which represents the price we filter by
+		* Returns a Vector of Drug elements which represents a copy of the repository that was also filtered by price
+		*/
+		Vector<Drug> filterPrice(double condition) const;
+
+		/*
+		* Method that filters the contents of the repository based on the substance type
+		* condition - const reference to a string which represents the substance we filter by
+		* Returns a Vector of Drug elements which represents a copy of the repository that was also filtered by substance
+		*/
+		Vector<Drug> filterSubstance(const std::string& condition) const;
 };
 
 class ServiceException : public Error {
 	using Error::Error;
+public:
+	static const std::string invalidSortingCriteria;
+	static const std::string invalidFilteringCriteria;
 };
+
+
 #endif

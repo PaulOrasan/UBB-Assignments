@@ -5,6 +5,90 @@
     {
       "results": [
         {
+          "ruleId": "C26432",
+          "message": {
+            "text": "If you define or delete any default operation in the type 'class Vector<class Drug>', define or delete them all (c.21)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 3,
+                  "endLine": 35,
+                  "endColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??1?$Vector@VDrug@@@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 133,
+                  "startColumn": 17,
+                  "endLine": 133,
+                  "endColumn": 32
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0?$Vector@VDrug@@@@QEAA@AEBV0@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 133,
+                  "startColumn": 3,
+                  "endLine": 133,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0?$Vector@VDrug@@@@QEAA@AEBV0@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
           "ruleId": "C26455",
           "message": {
             "text": "Default constructor may not throw. Declare it 'noexcept' (f.6)."
@@ -16,15 +100,295 @@
                   "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
                 },
                 "region": {
-                  "startLine": 49,
+                  "startLine": 121,
                   "startColumn": 15,
-                  "endLine": 49,
+                  "endLine": 121,
                   "endColumn": 15
                 }
               },
               "logicalLocations": [
                 {
                   "decoratedName": "??0?$Vector@VDrug@@@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 34,
+                  "endLine": 185,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?sort@?$Vector@VDrug@@@@QEAAXP6A_NAEBVDrug@@0@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 21,
+                  "endLine": 185,
+                  "endColumn": 31
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?sort@?$Vector@VDrug@@@@QEAAXP6A_NAEBVDrug@@0@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 16,
+                  "endLine": 186,
+                  "endColumn": 26
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?sort@?$Vector@VDrug@@@@QEAAXP6A_NAEBVDrug@@0@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 187,
+                  "startColumn": 20,
+                  "endLine": 187,
+                  "endColumn": 30
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?sort@?$Vector@VDrug@@@@QEAAXP6A_NAEBVDrug@@0@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 187,
+                  "startColumn": 6,
+                  "endLine": 187,
+                  "endColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?sort@?$Vector@VDrug@@@@QEAAXP6A_NAEBVDrug@@0@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 188,
+                  "startColumn": 6,
+                  "endLine": 188,
+                  "endColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?sort@?$Vector@VDrug@@@@QEAAXP6A_NAEBVDrug@@0@Z@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 199,
+                  "startColumn": 18,
+                  "endLine": 199,
+                  "endColumn": 28
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?filter@?$Vector@VDrug@@@@QEAAXV?$function@$$A6A_NAEBVDrug@@@Z@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 201,
+                  "startColumn": 19,
+                  "endLine": 201,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?filter@?$Vector@VDrug@@@@QEAAXV?$function@$$A6A_NAEBVDrug@@@Z@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 201,
+                  "startColumn": 5,
+                  "endLine": 201,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?filter@?$Vector@VDrug@@@@QEAAXV?$function@$$A6A_NAEBVDrug@@@Z@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/Facultate/1st_Year/2nd_Semester/OOP/Lab6-7_DrugStore/DrugStoreApp/DrugStoreApp/vector.h"
+                },
+                "region": {
+                  "startLine": 201,
+                  "startColumn": 28,
+                  "endLine": 201,
+                  "endColumn": 32
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?filter@?$Vector@VDrug@@@@QEAAXV?$function@$$A6A_NAEBVDrug@@@Z@std@@@Z",
                   "kind": "function"
                 }
               ]
@@ -42,7 +406,7 @@
       },
       "invocations": [
         {
-          "commandLine": "\"E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x008DB1D0 -il C:\\Users\\orasa\\AppData\\Local\\Temp\\_CL_d0338da9ast -typedil -f Service.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1928 -D_MSC_FULL_VER=192829337 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -nologo -W 4 -WX -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -Fox64\\Debug\\Service.obj -Fdx64\\Debug\\vc142.pdb -Gd -analyze:projectdirectory E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab6-7_DrugStore\\DrugStoreApp\\DrugStoreApp -analyze:rulesetdirectory ;E:\\IDEs\\Visual Studio\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset rules.ruleset -analyze:quiet -analyze:plugin E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\include -I E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\atlmfc\\include -I E:\\IDEs\\Visual Studio\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\cppwinrt -I E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab6-7_DrugStore\\DrugStoreApp\\DrugStoreApp\\Include\\um",
+          "commandLine": "\"E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x0082B1D0 -il C:\\Users\\orasa\\AppData\\Local\\Temp\\_CL_88b929f4ast -typedil -f Service.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1928 -D_MSC_FULL_VER=192829337 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -nologo -W 4 -WX -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -Fox64\\Debug\\Service.obj -Fdx64\\Debug\\vc142.pdb -Gd -analyze:projectdirectory E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab6-7_DrugStore\\DrugStoreApp\\DrugStoreApp -analyze:rulesetdirectory ;E:\\IDEs\\Visual Studio\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset rules.ruleset -analyze:quiet -analyze:plugin E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\include -I E:\\IDEs\\Visual Studio\\VC\\Tools\\MSVC\\14.28.29333\\atlmfc\\include -I E:\\IDEs\\Visual Studio\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\cppwinrt -I E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab6-7_DrugStore\\DrugStoreApp\\DrugStoreApp\\Include\\um",
           "executionSuccessful": true
         }
       ],

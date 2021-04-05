@@ -36,10 +36,31 @@ class Tester {
 
 		class VectorTester {
 		public:
+			/*
+			* Runs all the current available tests for testing Vector class
+			*/
 			void runTests();
 		private:
+
+			/*
+			* Runs all the current available tests for testing append feature in Vector class
+			*/
 			void testAppend();
+
+			/*
+			* Runs all the current available tests for testing erase feature in Vector class
+			*/
 			void testErase();
+
+			/*
+			* Runs all the current available tests for testing sort feature in Vector class
+			*/
+			void testSort();
+
+			/*
+			* Runs all the current available tests for testing filter feature in Vector class
+			*/
+			void testFilter();
 		}vectorTester;
 		class RepositoryTester {
 			public:
@@ -105,6 +126,16 @@ class Tester {
 				* Runs all the current available tests for getting Drugs feature in Service
 				*/
 				void testServiceGetDrugs();
+
+				/*
+				* Runs all the current available tests for sorting Drugs feature in Service
+				*/
+				void testServiceSort();
+
+				/*
+				* Runs all the current available tests for filtering Drugs feature in Service
+				*/
+				void testServiceFilter();
 		}serviceTester;
 	public:
 		/*

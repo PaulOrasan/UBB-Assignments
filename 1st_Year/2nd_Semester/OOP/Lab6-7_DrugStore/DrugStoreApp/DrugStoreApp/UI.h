@@ -6,16 +6,20 @@ class UI
 {
 	private:
 		const Service& serv;
-	public:
-		UI(const Service& serv) noexcept : serv(serv)  {}
-		void runApp();
 		void showMenu();
 		void uiAddDrug();
 		void uiDeleteDrug();
 		void uiUpdateDrug();
 		void uiFindDrug();
 		void uiShowAllDrugs();
+		void uiSortDrugs();
+		void uiFilterDrugs();
 		void showDrug(const Drug& drug);
+		void showDrugs(const Vector<Drug>& v);
+	public:
+		UI(const Service& serv) noexcept : serv(serv)  {}
+		void runApp();
+		
 };
 #endif
 

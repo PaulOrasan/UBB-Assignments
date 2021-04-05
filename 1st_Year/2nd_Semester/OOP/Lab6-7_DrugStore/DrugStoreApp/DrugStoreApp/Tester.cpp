@@ -5,6 +5,7 @@
 #include "Service.h"
 #include <cassert>
 #include "vector.h"
+#include <algorithm>
 void Tester::runTests() {
 	domainTester.runTests();
 	validationTester.runTests();
@@ -113,6 +114,8 @@ void Tester::ValidationTester::testValidatePrice() {
 void Tester::VectorTester::runTests() {
 	testAppend();
 	testErase();
+	testSort();
+	testFilter();
 }
 
 void Tester::VectorTester::testAppend() {
@@ -160,12 +163,53 @@ void Tester::VectorTester::testErase() {
 	catch (const VectorException& e) {
 		assert(e.getMessage() == VectorException::iteratorInvalid);
 	}
+	try {
+		it.setElement(3);
+	}
+	catch (const VectorException& e) {
+		assert(e.getMessage() == VectorException::iteratorInvalid);
+	}
 	const Iterator<int> it2{ v2 };
 	try {
 		v.erase(it2);
 	}
 	catch (const VectorException& e) {
 		assert(e.getMessage() == VectorException::wrongIterator);
+	}
+}
+void Tester::VectorTester::testSort() {
+	Vector<int> v;
+	constexpr int n{ 4 };
+	for (int i = 1; i <= n; i++) {
+		v.append(i);
+	}
+	Vector<int>v2{ v };
+	assert(v.length() == v2.length());
+	Iterator<int> it1{ v }, it2{ v2 };
+	while (it1.valid()) {
+		assert(it1.getElement() == it2.getElement());
+		it1.next();
+		it2.next();
+	}
+	v.sort([](const int& first, const int& second) noexcept {return first >= second; });
+	Iterator<int>it3{ v };
+	for (int i = n; i >= 1; i--) {
+		assert(it3.getElement() == i);
+		it3.next();
+	}
+}
+void Tester::VectorTester::testFilter() {
+	Vector<int> v;
+	constexpr int n{ 4 };
+	for (int i = 1; i <= n; i++) {
+		v.append(i);
+	}
+	v.filter([](const int& element) noexcept {return element > 1; });
+	assert(v.length() == n - 1);
+	Iterator<int>it{ v };
+	for (int i = 2; i <= n; i++) {
+		assert(it.getElement() == i);
+		it.next();
 	}
 }
 void Tester::RepositoryTester::runTests() {
@@ -266,6 +310,8 @@ void Tester::ServiceTester::runTests() {
 	testServiceDeleteDrug();
 	testServiceUpdateDrug();
 	testServiceSearchDrug();
+	testServiceSort();
+	testServiceFilter();
 }
 
 void Tester::ServiceTester::testServiceAddDrug() {
@@ -315,6 +361,7 @@ void Tester::ServiceTester::testServiceUpdateDrug() {
 	serv.addDrug(id, name, producer, activeSubstance, price);
 	serv.updateDrug(id, price + 1);
 	//assert(equalDoubles(serv.getDrugs().front().getPrice(), price + 1));
+	serv.getDrugs();
 	try {
 		serv.updateDrug(id + 1, price);
 	}
@@ -339,4 +386,54 @@ void Tester::ServiceTester::testServiceSearchDrug() {
 	catch (const ServiceException& se) {
 		assert(se.getMessage() == RepoException::drugDoesntExist);
 	}
+}
+
+void Tester::ServiceTester::testServiceSort() {
+	Repository repo;
+	const Service serv{ repo };
+	serv.addDrug(1, "algocalmin", "terapia", "acetilnofenil", 1.23);
+	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 2.35);
+	serv.addDrug(3, "mizocalm", "paranus", "hotil", 0.29);
+	Vector<Drug> sorted1{ serv.sort("name") };
+	std::vector<std::string> elems1;
+	Iterator<Drug> it1{ sorted1 };
+	while (it1.valid()) {
+		elems1.push_back(it1.getElement().getName());
+		it1.next();
+	}
+	assert(std::is_sorted(elems1.begin(), elems1.end()));
+	Vector<Drug> sorted2{ serv.sort("producer") };
+	std::vector<std::string> elems2;
+	Iterator<Drug> it2{ sorted2 };
+	while (it2.valid()) {
+		elems2.push_back(it2.getElement().getProducer());
+		it2.next();
+	}
+	assert(std::is_sorted(elems2.begin(), elems2.end()));
+	Vector<Drug>sorted3{ serv.sort("substance&price") };
+	assert(sorted3.length() == 3);
+	try {
+		Vector<Drug>sorted4{ serv.sort("fdsaf") };
+	}
+	catch (const ServiceException& e) {
+		assert(e.getMessage() == ServiceException::invalidSortingCriteria);
+	}
+}
+
+void Tester::ServiceTester::testServiceFilter() {
+	Repository repo;
+	const Service serv{ repo };
+	serv.addDrug(1, "algocalmin", "terapia", "acetilnofen", 1);
+	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
+	serv.addDrug(3, "mezocalm", "paranus", "acetilnofenil", 0.99);
+	Vector<Drug> v{ serv.filterPrice(1) }, k{ serv.filterSubstance("acetilnofenil") };
+	Iterator<Drug> it1{ v }, it2{ k };
+	assert(v.length() == 2);
+	assert(equalDoubles(it1.getElement().getPrice(), 1));
+	it1.next();
+	assert(equalDoubles(it1.getElement().getPrice(), 1));
+	assert(k.length() == 2);
+	assert(it2.getElement().getSubstance() == "acetilnofenil");
+	it2.next();
+	assert(it2.getElement().getSubstance() == "acetilnofenil");
 }

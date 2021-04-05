@@ -4,6 +4,13 @@ const std::string RepoException::drugExists{ "Drug already exists!" };
 const std::string RepoException::drugDoesntExist{ "Drug doesn't exist!" };
 
 void Repository::addDrug(const Drug& newDrug) {
+	Iterator<Drug> it{ drugArray };
+	while (it.valid()) {
+		if (it.getElement() == newDrug) {
+			throw RepoException{ RepoException::drugExists };
+		}
+		it.next();
+	}
 	drugArray.append(newDrug);
 }
 void Repository::deleteDrug(int id) {
