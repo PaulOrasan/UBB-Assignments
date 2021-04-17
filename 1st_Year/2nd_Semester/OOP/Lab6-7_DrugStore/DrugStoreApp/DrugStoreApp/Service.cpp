@@ -1,7 +1,11 @@
 #include "Service.h"
+#include <algorithm>
+#include <iterator>
 
 const std::string ServiceException::invalidSortingCriteria{ "The comparison criteria is not valid!" };
 const std::string ServiceException::invalidFilteringCriteria{ "The condition criteria is not valid!" };
+const std::string ServiceException::drugsAlreadyAddedOrNotFound{ "All drugs with that name are already added on the recipe or no drug was found!" };
+const std::string ServiceException::notEnoughDrugs{ "Not enough drugs stored to generate that recipe!" };
 void Service::addDrug(int id, const std::string& name, const std::string& producer, const std::string& activeSubstance, double price) const {
 	Drug newDrug{ id, name, producer, activeSubstance, price };
 	try {
@@ -14,6 +18,7 @@ void Service::addDrug(int id, const std::string& name, const std::string& produc
 void Service::deleteDrug(int id) const {
 	try {
 		repo.deleteDrug(id);
+		prescription.deleteDrug(id);
 	}
 	catch (const RepoException& re) {
 		throw ServiceException{ re.getMessage() };
@@ -22,6 +27,7 @@ void Service::deleteDrug(int id) const {
 void Service::updateDrug(int id, double newPrice) const {
 	try {
 		repo.updateDrug(id, newPrice);
+		prescription.deleteDrug(id);
 	}
 	catch (const RepoException& re) {
 		throw ServiceException{ re.getMessage() };
@@ -36,29 +42,29 @@ const Drug& Service::findDrug(int id) const {
 		throw ServiceException{ re.getMessage() };
 	}
 }
-const Vector<Drug>& Service::getDrugs() const noexcept {
+const std::vector<Drug>& Service::getDrugs() const noexcept {
 	return repo.getDrugs();
 }
 size_t Service::getSize() const noexcept {
 	return repo.getSize();
 }
 
-Vector<Drug> Service::sort(const std::string& criteria) const {
-	Vector<Drug> copy{ getDrugs() };
+std::vector<Drug> Service::sort(const std::string& criteria) const {
+	std::vector<Drug> copy{ getDrugs() };
 	if (criteria == "name") {
-		copy.sort([](const Drug& first, const Drug& second)noexcept {
+		std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second)noexcept {
 			return first.getName() <= second.getName();
 			});
 		return copy;
 	}
 	else if (criteria == "producer") {
-		copy.sort([](const Drug& first, const Drug& second)noexcept {
+		std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second)noexcept {
 			return first.getProducer() < second.getProducer();
 			});
 		return copy;
 	}
 	else if (criteria == "substance&price") {
-		copy.sort([](const Drug& first, const Drug& second) noexcept {
+		std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second) noexcept {
 			if (first.getSubstance() == second.getSubstance()) {
 				return first.getPrice() < second.getPrice();
 			}
@@ -71,18 +77,68 @@ Vector<Drug> Service::sort(const std::string& criteria) const {
 	}
 }
 
-Vector<Drug> Service::filterPrice(double condition) const {
-	Vector<Drug> copy{ getDrugs() };
-	copy.filter([=](const Drug& element)noexcept {
+std::vector<Drug> Service::filterPrice(double condition) const {
+	std::vector<Drug> copy{ getDrugs() };
+	auto it = remove_if(copy.begin(), copy.end(), [=](const Drug& element)noexcept {
 		return (element.getPrice() - condition <0.00001 && element.getPrice() - condition >-0.00001);
 		});
+	copy.assign(it, copy.end());
 	return copy;
 }
 
-Vector<Drug> Service::filterSubstance(const std::string& condition) const {
-	Vector<Drug> copy{ getDrugs() };
-	copy.filter([=](const Drug& element)noexcept {
+std::vector<Drug> Service::filterSubstance(const std::string& condition) const {
+	std::vector<Drug> copy{ getDrugs() };
+	auto it = remove_if(copy.begin(), copy.end(), [=](const Drug& element)noexcept {
 		return element.getSubstance() == condition;
 		});
+	copy.assign(it, copy.end());
 	return copy;
+}
+
+void Service::addDrugRecipe(const std::string& name) const {
+	const std::vector<Drug>& copy{ getDrugs() };
+	Prescription& pres{ prescription };
+	auto it = std::find_if(copy.begin(), copy.end(), [&pres, name](const Drug& drug) {return drug.getName() == name && !pres.findDrug(drug.getID()); });
+	if (it == copy.end()) {
+		throw ServiceException{ ServiceException::drugsAlreadyAddedOrNotFound };
+	}
+	else {
+		prescription.addDrug(*it);
+	}
+}
+
+const std::vector<Drug>& Service::getRecipe() const noexcept {
+	return prescription.getAll();
+}
+
+void Service::emptyRecipe() const noexcept {
+	prescription.emptyDrugs();
+}
+
+void Service::generateRecipe(int number) const {
+	if (number > getSize())
+		throw ServiceException{ ServiceException::notEnoughDrugs };
+	prescription.emptyDrugs();
+	std::vector<Drug> copy{ getDrugs() };
+	std::random_shuffle(copy.begin(), copy.end());
+	Prescription& pres = prescription;
+	for_each(copy.begin(), copy.end(), [&pres, &number](const Drug& drug) {
+		if (pres.getAll().size() < number) {
+			pres.addDrug(drug);
+		}
+		});
+}
+
+std::map<std::string, ProducerCount> Service::countProducer() const {
+	std::map<std::string, ProducerCount> dict;
+	const std::vector<Drug>& vec{ getDrugs() };
+	for (const auto& i : vec) {
+		if (dict.find(i.getProducer()) == dict.end()) {
+			dict[i.getProducer()] = ProducerCount(i.getProducer());
+		}
+		else {
+			dict[i.getProducer()].incrementCount();
+		}
+	}
+	return dict;
 }

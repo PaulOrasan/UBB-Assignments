@@ -14,8 +14,13 @@ class UI
 		void uiShowAllDrugs();
 		void uiSortDrugs();
 		void uiFilterDrugs();
+		void uiAddPrescription();
+		void uiCheckPrescription();
+		void uiEmptyPrescription() noexcept;
+		void uiGeneratePrescription();
+		void uiCountProducer();
 		void showDrug(const Drug& drug);
-		void showDrugs(const Vector<Drug>& v);
+		void showDrugs(const std::vector<Drug>& v);
 	public:
 		UI(const Service& serv) noexcept : serv(serv)  {}
 		void runApp();

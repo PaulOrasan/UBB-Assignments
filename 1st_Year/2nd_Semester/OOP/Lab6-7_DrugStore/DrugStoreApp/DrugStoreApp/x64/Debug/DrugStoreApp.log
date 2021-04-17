@@ -1,27 +1,10 @@
 ﻿  DrugStoreApp.cpp
   DrugStoreApp.vcxproj -> E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\x64\Debug\DrugStoreApp.exe
 E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Drug.cpp(4): warning C26432: If you define or delete any default operation in the type 'class Drug', define or delete them all (c.21).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(35): warning C26432: If you define or delete any default operation in the type 'class Vector<class Drug>', define or delete them all (c.21).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(121): warning C26455: Default constructor may not throw. Declare it 'noexcept' (f.6).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(162): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(175): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(175): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(175): warning C26451: Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(218): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(226): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(154): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(154): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(133): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(133): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(185): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(185): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(186): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(187): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(187): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(188): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(199): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(201): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(201): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(201): warning C26451: Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Repository.cpp(36): warning C26489: Don't dereference a pointer that may be invalid: 'allotemp.7'. '(temporary 7)' may have been invalidated at line 36 (lifetime.1).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Repository.cpp(36): warning C26487: Don't return a pointer '(30's result)' that may be invalid (lifetime.4).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Service.cpp(140): warning C26486: Don't pass a pointer that may be invalid to a function. Parameter 0 '@dict' in call to 'ProducerCount::incrementCount' may be invalid (lifetime.3).
 E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Tester.cpp(17): warning C26497: The function 'equalDoubles' could be marked constexpr if compile-time evaluation is desired (f.4).
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\vector.h(181): warning C26440: Function 'Vector<int>::sort' can be declared 'noexcept' (f.6).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Tester.cpp(388): warning C26486: Don't pass a pointer that may be invalid to a function. Parameter 0 '@dict' in call to 'ProducerCount::getCount' may be invalid (lifetime.3).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Tester.cpp(389): warning C26486: Don't pass a pointer that may be invalid to a function. Parameter 0 '@dict' in call to 'ProducerCount::getCount' may be invalid (lifetime.3).
+E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Tester.cpp(390): warning C26486: Don't pass a pointer that may be invalid to a function. Parameter 0 '@dict' in call to 'ProducerCount::getCount' may be invalid (lifetime.3).

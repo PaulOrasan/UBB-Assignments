@@ -39,7 +39,10 @@
     <ClCompile Include="UI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="vector.cpp">
+    <ClCompile Include="Prescription.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProducerCount.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,7 +68,10 @@
     <ClInclude Include="UI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vector.h">
+    <ClInclude Include="Prescription.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProducerCount.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

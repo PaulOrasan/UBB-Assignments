@@ -147,22 +147,24 @@
     <ClCompile Include="Drug.cpp" />
     <ClCompile Include="DrugStoreApp.cpp" />
     <ClCompile Include="Error.cpp" />
+    <ClCompile Include="Prescription.cpp" />
+    <ClCompile Include="ProducerCount.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="Tester.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Validation.cpp" />
-    <ClCompile Include="vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Drug.h" />
     <ClInclude Include="Error.h" />
+    <ClInclude Include="Prescription.h" />
+    <ClInclude Include="ProducerCount.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="Tester.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Validation.h" />
-    <ClInclude Include="vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

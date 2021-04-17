@@ -2,6 +2,7 @@
 #include "Repository.h"
 #include "Service.h"
 #include "UI.h"
+#include "Prescription.h"
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
 #include <crtdbg.h>
@@ -10,7 +11,8 @@ int main() {
 	Tester tester;
 	tester.runTests();
 	Repository repo;
-	const Service serv{ repo };
+	Prescription pres;
+	const Service serv{ repo, pres };
 	UI ui{ serv };
 	ui.runApp();
 	return 0;

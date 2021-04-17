@@ -34,34 +34,6 @@ class Tester {
 			void testValidatePrice();
 		}validationTester;
 
-		class VectorTester {
-		public:
-			/*
-			* Runs all the current available tests for testing Vector class
-			*/
-			void runTests();
-		private:
-
-			/*
-			* Runs all the current available tests for testing append feature in Vector class
-			*/
-			void testAppend();
-
-			/*
-			* Runs all the current available tests for testing erase feature in Vector class
-			*/
-			void testErase();
-
-			/*
-			* Runs all the current available tests for testing sort feature in Vector class
-			*/
-			void testSort();
-
-			/*
-			* Runs all the current available tests for testing filter feature in Vector class
-			*/
-			void testFilter();
-		}vectorTester;
 		class RepositoryTester {
 			public:
 				/*
@@ -93,6 +65,8 @@ class Tester {
 				* Runs all the current available tests for getting Drugs feature
 				*/
 				void testGetDrugs();
+
+
 		}repositoryTester;
 
 		class ServiceTester {
@@ -136,6 +110,22 @@ class Tester {
 				* Runs all the current available tests for filtering Drugs feature in Service
 				*/
 				void testServiceFilter();
+
+				/*
+				* Runs all the current available tests for adding Drugs in recipe feature
+				*/
+				void testAddDrugsRecipe();
+
+				/*
+				* Runs all the current available tests for empty Drugs in recipe feature
+				*/
+				void testGenerateRecipe();
+
+				/*
+				* Runs all the current available tests for counting Drugs feature
+				*/
+				void testCountProducer();
+
 		}serviceTester;
 	public:
 		/*

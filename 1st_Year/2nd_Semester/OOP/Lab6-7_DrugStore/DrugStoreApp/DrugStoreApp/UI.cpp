@@ -39,12 +39,32 @@ void UI::runApp() {
 				uiFilterDrugs();
 				continue;
 			}
+			if (option == "8") {
+				uiAddPrescription();
+				continue;
+			}
+			if (option == "9") {
+				uiCheckPrescription();
+				continue;
+			}
+			if (option == "10") {
+				uiEmptyPrescription();
+				continue;
+			}
+			if (option == "11") {
+				uiGeneratePrescription();
+				continue;
+			}
+			if (option == "12") {
+				uiCountProducer();
+				continue;
+			}
 		}
 		catch (const Error& e) {
 			std::cout << e.getMessage() << '\n';
 			continue;
 		}
-		if (option == "8") {
+		if (option == "13") {
 			break;
 		}
 		std::cout << "Error: your input is invalid.\n";
@@ -58,7 +78,12 @@ void UI::showMenu() {
 	std::cout << "5. Find existing drug\n";
 	std::cout << "6. Sort drugs\n";
 	std::cout << "7. Filter drugs\n";
-	std::cout << "8. Exit\n";
+	std::cout << "8. Add drug in prescription\n";
+	std::cout << "9. Check prescription\n";
+	std::cout << "10. Empty prescription\n";
+	std::cout << "11. Generate prescription\n";
+	std::cout << "12. Count drugs by producer\n";
+	std::cout << "13. Exit\n";
 	std::cout << "Your input: ";
 }
 void UI::uiAddDrug() {
@@ -109,12 +134,9 @@ void UI::uiShowAllDrugs() {
 	std::cout << "The list of drugs:\n";
 	showDrugs(serv.getDrugs());
 }
-void UI::showDrugs(const Vector<Drug>& v) {
-	Iterator<Drug> it{ v };
-	while (it.valid()) {
-		showDrug(it.getElement());
-		it.next();
-	}
+void UI::showDrugs(const std::vector<Drug>& v) {
+	for (const auto& it : v)
+		showDrug(it);
 }
 void UI::showDrug(const Drug& drug) {
 	std::cout << "ID: " << drug.getID() << '\n';
@@ -129,7 +151,7 @@ void UI::uiSortDrugs() {
 	std::string input;
 	std::cout << "Please input the criteria used for sorting (either name, producer, substance&price): ";
 	std::getline(std::cin, input);
-	Vector<Drug> v{ serv.sort(input) };
+	std::vector<Drug> v{ serv.sort(input) };
 	std::cout << "The sorted drugs by " << input << " are:\n";
 	showDrugs(v);
 }
@@ -142,16 +164,42 @@ void UI::uiFilterDrugs() {
 	std::getline(std::cin, inputCondition);
 	if (inputCriteria == "price") {
 		Validation::validatePrice(inputCondition);
-		Vector<Drug> v{ serv.filterPrice(stod(inputCondition))};
+		std::vector<Drug> v{ serv.filterPrice(stod(inputCondition))};
 		std::cout << "The filtered drugs by " << inputCriteria << " are:\n";
 		showDrugs(v);
 	}
 	else if (inputCriteria == "substance") {
-		Vector<Drug> v{ serv.filterSubstance(inputCondition) };
+		std::vector<Drug> v{ serv.filterSubstance(inputCondition) };
 		std::cout << "The filtered drugs by " << inputCriteria << " are:\n";
 		showDrugs(v);
 	}
 	else {
 		throw ServiceException{ ServiceException::invalidFilteringCriteria };
+	}
+}
+void UI::uiAddPrescription() {
+	std::cout << "Please input the name of the drug you want to add: ";
+	std::string name;
+	std::getline(std::cin, name);
+	serv.addDrugRecipe(name);
+}
+void UI::uiCheckPrescription() {
+	const std::vector<Drug>& copy{ serv.getRecipe() };
+	showDrugs(copy);
+}
+void UI::uiEmptyPrescription() noexcept {
+	serv.emptyRecipe();
+}
+void UI::uiGeneratePrescription() {
+	std::cout << "Please input the number of drugs you want on your prescription: ";
+	std::string number;
+	std::getline(std::cin, number);
+	Validation::validateID(number);
+	serv.generateRecipe(stoi(number));
+}
+void UI::uiCountProducer() {
+	auto dict = serv.countProducer();
+	for (const auto& i : dict) {
+		std::cout << "For producer " << i.first << " we found " << i.second.getCount() << " drugs\n";
 	}
 }

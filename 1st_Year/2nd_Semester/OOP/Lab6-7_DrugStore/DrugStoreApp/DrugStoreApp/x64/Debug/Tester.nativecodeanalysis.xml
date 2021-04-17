@@ -3,20 +3,6 @@
   <DEFECT>
     <SFA>
       <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>35</LINE>
-      <COLUMN>2</COLUMN>
-    </SFA>
-    <DEFECTCODE>26432</DEFECTCODE>
-    <DESCRIPTION>If you define or delete any default operation in the type 'class Vector&lt;class Drug&gt;', define or delete them all (c.21).</DESCRIPTION>
-    <FUNCTION>Vector&lt;Drug&gt;::{dtor}</FUNCTION>
-    <DECORATED>??1?$Vector@VDrug@@@@QEAA@XZ</DECORATED>
-    <FUNCLINE>35</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
       <FILENAME>Tester.cpp</FILENAME>
       <LINE>17</LINE>
       <COLUMN>5</COLUMN>
@@ -31,351 +17,64 @@
   <DEFECT>
     <SFA>
       <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>35</LINE>
-      <COLUMN>2</COLUMN>
+      <FILENAME>Tester.cpp</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
     </SFA>
-    <DEFECTCODE>26432</DEFECTCODE>
-    <DESCRIPTION>If you define or delete any default operation in the type 'class Vector&lt;int&gt;', define or delete them all (c.21).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::{dtor}</FUNCTION>
-    <DECORATED>??1?$Vector@H@@QEAA@XZ</DECORATED>
-    <FUNCLINE>35</FUNCLINE>
-    <PATH></PATH>
+    <DEFECTCODE>26486</DEFECTCODE>
+    <DESCRIPTION>Don't pass a pointer that may be invalid to a function. Parameter 0 '@dict' in call to 'ProducerCount::getCount' may be invalid (lifetime.3).</DESCRIPTION>
+    <FUNCTION>Tester::ServiceTester::testCountProducer</FUNCTION>
+    <DECORATED>?testCountProducer@ServiceTester@Tester@@AEAAXXZ</DECORATED>
+    <FUNCLINE>377</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+        <FILENAME>Tester.cpp</FILENAME>
+        <LINE>386</LINE>
+        <COLUMN>17</COLUMN>
+      </SFA>
+    </PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>121</LINE>
-      <COLUMN>14</COLUMN>
+      <FILENAME>Tester.cpp</FILENAME>
+      <LINE>389</LINE>
+      <COLUMN>1</COLUMN>
     </SFA>
-    <DEFECTCODE>26455</DEFECTCODE>
-    <DESCRIPTION>Default constructor may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Vector&lt;Drug&gt;::{ctor}</FUNCTION>
-    <DECORATED>??0?$Vector@VDrug@@@@QEAA@XZ</DECORATED>
-    <FUNCLINE>121</FUNCLINE>
-    <PATH></PATH>
+    <DEFECTCODE>26486</DEFECTCODE>
+    <DESCRIPTION>Don't pass a pointer that may be invalid to a function. Parameter 0 '@dict' in call to 'ProducerCount::getCount' may be invalid (lifetime.3).</DESCRIPTION>
+    <FUNCTION>Tester::ServiceTester::testCountProducer</FUNCTION>
+    <DECORATED>?testCountProducer@ServiceTester@Tester@@AEAAXXZ</DECORATED>
+    <FUNCLINE>377</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+        <FILENAME>Tester.cpp</FILENAME>
+        <LINE>386</LINE>
+        <COLUMN>17</COLUMN>
+      </SFA>
+    </PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>218</LINE>
-      <COLUMN>37</COLUMN>
+      <FILENAME>Tester.cpp</FILENAME>
+      <LINE>390</LINE>
+      <COLUMN>1</COLUMN>
     </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Iterator&lt;Drug&gt;::getElement</FUNCTION>
-    <DECORATED>?getElement@?$Iterator@VDrug@@@@QEBAAEBVDrug@@XZ</DECORATED>
-    <FUNCLINE>216</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>133</LINE>
-      <COLUMN>12</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::{ctor}</FUNCTION>
-    <DECORATED>??0?$Vector@H@@QEAA@AEBV0@@Z</DECORATED>
-    <FUNCLINE>128</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>133</LINE>
-      <COLUMN>31</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::{ctor}</FUNCTION>
-    <DECORATED>??0?$Vector@H@@QEAA@AEBV0@@Z</DECORATED>
-    <FUNCLINE>128</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>121</LINE>
-      <COLUMN>14</COLUMN>
-    </SFA>
-    <DEFECTCODE>26455</DEFECTCODE>
-    <DESCRIPTION>Default constructor may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::{ctor}</FUNCTION>
-    <DECORATED>??0?$Vector@H@@QEAA@XZ</DECORATED>
-    <FUNCLINE>121</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>162</LINE>
-      <COLUMN>14</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::append</FUNCTION>
-    <DECORATED>?append@?$Vector@H@@QEAAXAEBH@Z</DECORATED>
-    <FUNCLINE>159</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>175</LINE>
-      <COLUMN>12</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::erase</FUNCTION>
-    <DECORATED>?erase@?$Vector@H@@QEAAXAEBV?$Iterator@H@@@Z</DECORATED>
-    <FUNCLINE>167</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>175</LINE>
-      <COLUMN>30</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::erase</FUNCTION>
-    <DECORATED>?erase@?$Vector@H@@QEAAXAEBV?$Iterator@H@@@Z</DECORATED>
-    <FUNCLINE>167</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>175</LINE>
-      <COLUMN>27</COLUMN>
-    </SFA>
-    <DEFECTCODE>26451</DEFECTCODE>
-    <DESCRIPTION>Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::erase</FUNCTION>
-    <DECORATED>?erase@?$Vector@H@@QEAAXAEBV?$Iterator@H@@@Z</DECORATED>
-    <FUNCLINE>167</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>185</LINE>
-      <COLUMN>43</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::sort</FUNCTION>
-    <DECORATED>?sort@?$Vector@H@@QEAAXP6A_NAEBH0@Z@Z</DECORATED>
-    <FUNCLINE>181</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>185</LINE>
-      <COLUMN>30</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::sort</FUNCTION>
-    <DECORATED>?sort@?$Vector@H@@QEAAXP6A_NAEBH0@Z@Z</DECORATED>
-    <FUNCLINE>181</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>186</LINE>
-      <COLUMN>25</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::sort</FUNCTION>
-    <DECORATED>?sort@?$Vector@H@@QEAAXP6A_NAEBH0@Z@Z</DECORATED>
-    <FUNCLINE>181</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>187</LINE>
-      <COLUMN>15</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::sort</FUNCTION>
-    <DECORATED>?sort@?$Vector@H@@QEAAXP6A_NAEBH0@Z@Z</DECORATED>
-    <FUNCLINE>181</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>187</LINE>
-      <COLUMN>29</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::sort</FUNCTION>
-    <DECORATED>?sort@?$Vector@H@@QEAAXP6A_NAEBH0@Z@Z</DECORATED>
-    <FUNCLINE>181</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>188</LINE>
-      <COLUMN>15</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::sort</FUNCTION>
-    <DECORATED>?sort@?$Vector@H@@QEAAXP6A_NAEBH0@Z@Z</DECORATED>
-    <FUNCLINE>181</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>181</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26440</DEFECTCODE>
-    <DESCRIPTION>Function 'Vector&lt;int&gt;::sort' can be declared 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::sort</FUNCTION>
-    <DECORATED>?sort@?$Vector@H@@QEAAXP6A_NAEBH0@Z@Z</DECORATED>
-    <FUNCLINE>181</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>199</LINE>
-      <COLUMN>27</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::filter</FUNCTION>
-    <DECORATED>?filter@?$Vector@H@@QEAAXV?$function@$$A6A_NAEBH@Z@std@@@Z</DECORATED>
-    <FUNCLINE>196</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>201</LINE>
-      <COLUMN>14</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::filter</FUNCTION>
-    <DECORATED>?filter@?$Vector@H@@QEAAXV?$function@$$A6A_NAEBH@Z@std@@@Z</DECORATED>
-    <FUNCLINE>196</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>201</LINE>
-      <COLUMN>32</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::filter</FUNCTION>
-    <DECORATED>?filter@?$Vector@H@@QEAAXV?$function@$$A6A_NAEBH@Z@std@@@Z</DECORATED>
-    <FUNCLINE>196</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>201</LINE>
-      <COLUMN>29</COLUMN>
-    </SFA>
-    <DEFECTCODE>26451</DEFECTCODE>
-    <DESCRIPTION>Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::filter</FUNCTION>
-    <DECORATED>?filter@?$Vector@H@@QEAAXV?$function@$$A6A_NAEBH@Z@std@@@Z</DECORATED>
-    <FUNCLINE>196</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>218</LINE>
-      <COLUMN>37</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Iterator&lt;int&gt;::getElement</FUNCTION>
-    <DECORATED>?getElement@?$Iterator@H@@QEBAAEBHXZ</DECORATED>
-    <FUNCLINE>216</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>226</LINE>
-      <COLUMN>30</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Iterator&lt;int&gt;::setElement</FUNCTION>
-    <DECORATED>?setElement@?$Iterator@H@@QEBAXAEBH@Z</DECORATED>
-    <FUNCLINE>224</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>154</LINE>
-      <COLUMN>15</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::resize</FUNCTION>
-    <DECORATED>?resize@?$Vector@H@@AEAAXXZ</DECORATED>
-    <FUNCLINE>150</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>vector.h</FILENAME>
-      <LINE>154</LINE>
-      <COLUMN>29</COLUMN>
-    </SFA>
-    <DEFECTCODE>26446</DEFECTCODE>
-    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
-    <FUNCTION>Vector&lt;int&gt;::resize</FUNCTION>
-    <DECORATED>?resize@?$Vector@H@@AEAAXXZ</DECORATED>
-    <FUNCLINE>150</FUNCLINE>
-    <PATH></PATH>
+    <DEFECTCODE>26486</DEFECTCODE>
+    <DESCRIPTION>Don't pass a pointer that may be invalid to a function. Parameter 0 '@dict' in call to 'ProducerCount::getCount' may be invalid (lifetime.3).</DESCRIPTION>
+    <FUNCTION>Tester::ServiceTester::testCountProducer</FUNCTION>
+    <DECORATED>?testCountProducer@ServiceTester@Tester@@AEAAXXZ</DECORATED>
+    <FUNCLINE>377</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
+        <FILENAME>Tester.cpp</FILENAME>
+        <LINE>386</LINE>
+        <COLUMN>17</COLUMN>
+      </SFA>
+    </PATH>
   </DEFECT>
 </DEFECTS>

@@ -6,10 +6,10 @@
 #include <cassert>
 #include "vector.h"
 #include <algorithm>
+#include <iostream>
 void Tester::runTests() {
 	domainTester.runTests();
 	validationTester.runTests();
-	vectorTester.runTests();
 	repositoryTester.runTests();
 	serviceTester.runTests();
 }
@@ -111,107 +111,6 @@ void Tester::ValidationTester::testValidatePrice() {
 	Validation::validatePrice("12334.32413");
 }
 
-void Tester::VectorTester::runTests() {
-	testAppend();
-	testErase();
-	testSort();
-	testFilter();
-}
-
-void Tester::VectorTester::testAppend() {
-	Vector<int> v, v2;
-	constexpr int n{ 4 };
-	for (int i = 1; i <= n; i++) {
-		v.append(i);
-	}
-	assert(v.length() == n);
-	assert(v2.length() == 0);
-	Iterator<int> it{ v };
-	for (int i = 1; i <= n; i++) {
-		assert(it.getElement() == i);
-		it.next();
-	}
-}
-void Tester::VectorTester::testErase() {
-	Vector<int> v, v2;
-	constexpr int n{ 4 };
-	for (int i = 1; i <= n; i++) {
-		v.append(i);
-	}
-	assert(v.length() == n);
-	assert(v2.length() == 0);
-	Iterator<int> it{ v };
-	assert(it.getElement() == 1);
-	while (it.valid()) {
-		v.erase(it);
-	}
-	try {
-		it.getElement();
-	}
-	catch (const VectorException& e) {
-		assert(e.getMessage() == VectorException::iteratorInvalid);
-	}
-	try {
-		it.next();
-	}
-	catch (const VectorException& e) {
-		assert(e.getMessage() == VectorException::iteratorInvalid);
-	}
-	try {
-		v.erase(it);
-	}
-	catch (const VectorException& e) {
-		assert(e.getMessage() == VectorException::iteratorInvalid);
-	}
-	try {
-		it.setElement(3);
-	}
-	catch (const VectorException& e) {
-		assert(e.getMessage() == VectorException::iteratorInvalid);
-	}
-	const Iterator<int> it2{ v2 };
-	try {
-		v.erase(it2);
-	}
-	catch (const VectorException& e) {
-		assert(e.getMessage() == VectorException::wrongIterator);
-	}
-}
-void Tester::VectorTester::testSort() {
-	Vector<int> v;
-	constexpr int n{ 4 };
-	for (int i = 1; i <= n; i++) {
-		v.append(i);
-	}
-	Vector<int>v2{ v };
-	assert(v.length() == v2.length());
-	Iterator<int> it1{ v }, it2{ v2 };
-	while (it1.valid()) {
-		assert(it1.getElement() == it2.getElement());
-		it1.next();
-		it2.next();
-	}
-	v.sort([](const int& first, const int& second) noexcept {return first >= second; });
-	Iterator<int>it3{ v };
-	for (int i = n; i >= 1; i--) {
-		assert(it3.getElement() == i);
-		it3.next();
-	}
-}
-void Tester::VectorTester::testFilter() {
-	Vector<int> v;
-	constexpr int n{ 4 };
-	for (int i = 1; i <= n; i++) {
-		v.append(i);
-	}
-	v.filter([](const int& element) noexcept {return element > 1; });
-	assert(v.length() == n - 1);
-	Iterator<int>it{ v };
-	for (int i = 2; i <= n; i++) {
-		assert(it.getElement() == i);
-		it.next();
-	}
-}
 void Tester::RepositoryTester::runTests() {
 	testAddDrug();
 	testDeleteDrug();
@@ -312,11 +211,15 @@ void Tester::ServiceTester::runTests() {
 	testServiceSearchDrug();
 	testServiceSort();
 	testServiceFilter();
+	testAddDrugsRecipe();
+	testGenerateRecipe();
+	testCountProducer();
 }
 
 void Tester::ServiceTester::testServiceAddDrug() {
 	Repository repo;
-	const Service serv{ repo };
+	Prescription pres;
+	const Service serv{ repo, pres };
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -335,7 +238,8 @@ void Tester::ServiceTester::testServiceAddDrug() {
 
 void Tester::ServiceTester::testServiceDeleteDrug() {
 	Repository repo;
-	const Service serv{ repo };
+	Prescription pres;
+	const Service serv{ repo, pres };
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -353,7 +257,8 @@ void Tester::ServiceTester::testServiceDeleteDrug() {
 
 void Tester::ServiceTester::testServiceUpdateDrug() {
 	Repository repo;
-	const Service serv{ repo };
+	Prescription pres;
+	const Service serv{ repo, pres };
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -372,7 +277,8 @@ void Tester::ServiceTester::testServiceUpdateDrug() {
 
 void Tester::ServiceTester::testServiceSearchDrug() {
 	Repository repo;
-	const Service serv{ repo };
+	Prescription pres;
+	const Service serv{ repo, pres };
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -390,30 +296,21 @@ void Tester::ServiceTester::testServiceSearchDrug() {
 
 void Tester::ServiceTester::testServiceSort() {
 	Repository repo;
-	const Service serv{ repo };
+	Prescription pres;
+	const Service serv{ repo, pres };
 	serv.addDrug(1, "algocalmin", "terapia", "acetilnofenil", 1.23);
 	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 2.35);
 	serv.addDrug(3, "mizocalm", "paranus", "hotil", 0.29);
-	Vector<Drug> sorted1{ serv.sort("name") };
+	std::vector<Drug> sorted1{ serv.sort("name") };
 	std::vector<std::string> elems1;
-	Iterator<Drug> it1{ sorted1 };
-	while (it1.valid()) {
-		elems1.push_back(it1.getElement().getName());
-		it1.next();
-	}
 	assert(std::is_sorted(elems1.begin(), elems1.end()));
-	Vector<Drug> sorted2{ serv.sort("producer") };
+	std::vector<Drug> sorted2{ serv.sort("producer") };
 	std::vector<std::string> elems2;
-	Iterator<Drug> it2{ sorted2 };
-	while (it2.valid()) {
-		elems2.push_back(it2.getElement().getProducer());
-		it2.next();
-	}
 	assert(std::is_sorted(elems2.begin(), elems2.end()));
-	Vector<Drug>sorted3{ serv.sort("substance&price") };
-	assert(sorted3.length() == 3);
+	std::vector<Drug>sorted3{ serv.sort("substance&price") };
+	assert(sorted3.size() == 3);
 	try {
-		Vector<Drug>sorted4{ serv.sort("fdsaf") };
+		std::vector<Drug>sorted4{ serv.sort("fdsaf") };
 	}
 	catch (const ServiceException& e) {
 		assert(e.getMessage() == ServiceException::invalidSortingCriteria);
@@ -422,18 +319,73 @@ void Tester::ServiceTester::testServiceSort() {
 
 void Tester::ServiceTester::testServiceFilter() {
 	Repository repo;
-	const Service serv{ repo };
+	Prescription pres;
+	const Service serv{ repo, pres };
 	serv.addDrug(1, "algocalmin", "terapia", "acetilnofen", 1);
 	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
 	serv.addDrug(3, "mezocalm", "paranus", "acetilnofenil", 0.99);
-	Vector<Drug> v{ serv.filterPrice(1) }, k{ serv.filterSubstance("acetilnofenil") };
-	Iterator<Drug> it1{ v }, it2{ k };
-	assert(v.length() == 2);
-	assert(equalDoubles(it1.getElement().getPrice(), 1));
-	it1.next();
-	assert(equalDoubles(it1.getElement().getPrice(), 1));
-	assert(k.length() == 2);
-	assert(it2.getElement().getSubstance() == "acetilnofenil");
-	it2.next();
-	assert(it2.getElement().getSubstance() == "acetilnofenil");
+	std::vector<Drug> v{ serv.filterPrice(1) }, k{ serv.filterSubstance("acetilnofenil") };
+	assert(v.size() == 2);
+	assert(k.size() == 2);
+}
+
+void Tester::ServiceTester::testAddDrugsRecipe() {
+	Repository repo;
+	Prescription pres;
+	const Service serv{ repo, pres };
+	serv.addDrug(1, "algocalmin", "terapia", "acetilnofen", 1);
+	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
+	serv.addDrug(3, "mezocalm", "paranus", "acetilnofenil", 0.99);
+	serv.addDrugRecipe("paracetamol");
+	try {
+		serv.addDrugRecipe("paracetamol");
+	}
+	catch (const ServiceException& e) {
+		assert(e.getMessage() == ServiceException::drugsAlreadyAddedOrNotFound);
+	}
+	assert(serv.getRecipe().size() == 1);
+	serv.deleteDrug(2);
+	assert(serv.getRecipe().size() == 0);
+	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
+	serv.addDrug(4, "paracetamol", "bayer", "acetilnofenil", 1);
+	serv.addDrugRecipe("paracetamol");
+	serv.addDrugRecipe("paracetamol");
+	assert(serv.getRecipe().size() == 2);
+	serv.emptyRecipe();
+	assert(serv.getRecipe().size() == 0);
+}
+
+void Tester::ServiceTester::testGenerateRecipe() {
+	Repository repo;
+	Prescription pres;
+	const Service serv{ repo, pres };
+	serv.addDrug(1, "algocalmin", "terapia", "acetilnofen", 1);
+	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
+	serv.addDrug(3, "mezocalm", "paranus", "acetilnofenil", 0.99);
+	serv.addDrug(4, "algocalmin", "paranus", "acetilnofenil", 0.99);
+	serv.addDrug(5, "mezocalm", "paranus", "acetilnofenil", 0.99);
+	try {
+		serv.generateRecipe(15);
+	}
+	catch (const ServiceException& e) {
+		assert(e.getMessage() == ServiceException::notEnoughDrugs);
+	}
+	serv.generateRecipe(4);
+	assert(serv.getRecipe().size() == 4);
+}
+
+void Tester::ServiceTester::testCountProducer() {
+	Repository repo;
+	Prescription pres;
+	const Service serv{ repo, pres };
+	serv.addDrug(1, "algocalmin", "terapia", "acetilnofen", 1);
+	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
+	serv.addDrug(3, "mezocalm", "paranus", "acetilnofenil", 0.99);
+	serv.addDrug(4, "algocalmin", "paranus", "acetilnofenil", 0.99);
+	serv.addDrug(5, "mezocalm", "paranus", "acetilnofenil", 0.99);
+	auto dict = serv.countProducer();
+	assert(dict.size() == 3);
+	assert(dict["terapia"].getCount() == 1);
+	assert(dict["bayer"].getCount() == 1);
+	assert(dict["paranus"].getCount() == 3);
 }

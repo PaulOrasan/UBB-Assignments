@@ -1,62 +1,44 @@
 #include "Repository.h"
-
+#include <algorithm>
 const std::string RepoException::drugExists{ "Drug already exists!" };
 const std::string RepoException::drugDoesntExist{ "Drug doesn't exist!" };
-
 void Repository::addDrug(const Drug& newDrug) {
-	Iterator<Drug> it{ drugArray };
-	while (it.valid()) {
-		if (it.getElement() == newDrug) {
-			throw RepoException{ RepoException::drugExists };
-		}
-		it.next();
+	if (find(drugArray.begin(), drugArray.end(), newDrug) != drugArray.end()) {
+		throw RepoException{ RepoException::drugExists };
 	}
-	drugArray.append(newDrug);
+	drugArray.push_back(newDrug);
 }
 void Repository::deleteDrug(int id) {
-	Iterator<Drug> it{drugArray};
-	while (it.valid()) {
-		if (it.getElement().getID() == id) {
-			drugArray.erase(it);
-			return;
-		}
-		it.next();
-	}
-	throw RepoException{ RepoException::drugDoesntExist };
-}
-void Repository::updateDrug(int id, double newPrice) {
-	Iterator<Drug> it{ drugArray };
-	while (it.valid()) {
-		if (it.getElement().getID() == id) {
-			Drug newDrug = it.getElement();
-			newDrug.setPrice(newPrice);
-			it.setElement(newDrug);
-			return;
-		}
-		it.next();
-	}
-	throw RepoException{ RepoException::drugDoesntExist };
-}
-
-const Drug& Repository::searchDrug(int id) const {
-	/*auto it = find(drugArray.begin(), drugArray.end(), aux);
+	Drug aux;
+	aux.setID(id);
+	auto it = find(drugArray.begin(), drugArray.end(), aux);
 	if (it == drugArray.end()) {
 		throw RepoException{ RepoException::drugDoesntExist };
 	}
-	return *it;*/
-	Iterator<Drug> it{ drugArray };
-	while (it.valid()) {
-		if (it.getElement().getID() == id) {
-			return it.getElement();
-		}
-		it.next();
+	drugArray.erase(it);
+}
+void Repository::updateDrug(int id, double newPrice) {
+	Drug aux;
+	aux.setID(id);
+	auto it = find(drugArray.begin(), drugArray.end(), aux);
+	if (it == drugArray.end()) {
+		throw RepoException{ RepoException::drugDoesntExist };
 	}
-	throw RepoException{ RepoException::drugDoesntExist };
+	it->setPrice(newPrice);
 }
 
-const Vector<Drug>& Repository::getDrugs() const noexcept {
+const Drug& Repository::searchDrug(int id) const {
+	Drug aux;
+	aux.setID(id);
+	auto it = std::find(drugArray.begin(), drugArray.end(), aux);
+	if (it == drugArray.end())
+		throw RepoException{ RepoException::drugDoesntExist };
+	return *it;
+}
+
+const std::vector<Drug>& Repository::getDrugs() const noexcept {
 	return drugArray;
 }
 size_t Repository::getSize() const noexcept {
-	return drugArray.length();
+	return drugArray.size();
 }
