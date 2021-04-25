@@ -18,3 +18,12 @@ bool equalPrices(const Drug& a, const Drug& b) noexcept {
 bool operator==(const Drug& a, const Drug& b) noexcept {
 	return a.getID() == b.getID();
 }
+
+std::ostream& operator<<(std::ostream& out, const Drug& d) {
+	out << d.id << '\n';
+	out << d.name << '\n';
+	out << d.producer << '\n';
+	out << d.activeSubstance << '\n';
+	out << d.price << '\n';
+	return out;
+}

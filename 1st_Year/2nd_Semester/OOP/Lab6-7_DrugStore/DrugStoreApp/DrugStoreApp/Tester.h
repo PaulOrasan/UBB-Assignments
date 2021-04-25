@@ -62,9 +62,14 @@ class Tester {
 				void testSearchDrug();
 
 				/*
-				* Runs all the current available tests for getting Drugs feature
+				* Runs all the current available tests for file repository feature
 				*/
-				void testGetDrugs();
+				void testFileRepository();
+
+				/*
+				* Runs all the current available tests for chaotic repository feature
+				*/
+				void testChaoticRepository();
 
 
 		}repositoryTester;
@@ -125,6 +130,11 @@ class Tester {
 				* Runs all the current available tests for counting Drugs feature
 				*/
 				void testCountProducer();
+
+				/*
+				* Runs all the current available tests for undo operation feature
+				*/
+				void testUndo();
 
 		}serviceTester;
 	public:

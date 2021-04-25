@@ -1,5 +1,6 @@
 #ifndef SERVICE_H
 #define SERVICE_H
+#include "MemoryRepository.h"
 #include "Repository.h"
 #include <string>
 #include <vector>
@@ -7,12 +8,15 @@
 #include "Prescription.h"
 #include <map>
 #include "ProducerCount.h"
-
+#include "UndoAction.h"
+#include <memory>
+#include <stack>
 class Service
 {
 	private:
 		Repository& repo;
 		Prescription& prescription;
+		std::stack<std::unique_ptr<UndoAction>> undoList;
 	public:
 		/*
 		* constructor for the Service class
@@ -28,14 +32,14 @@ class Service
 		* price - double which represents the price of the drug
 		* Throws ServiceException if a drug with the same ID already exists in the repository
 		*/
-		void addDrug(int id, const std::string& name, const std::string& producer, const std::string& activeSubstance, double price) const;
+		void addDrug(int id, const std::string& name, const std::string& producer, const std::string& activeSubstance, double price);
 
 		/*
 		* Method for deleting a Drug from the repository
 		* id - integer which represents the id of the new drug
 		* Throws ServiceException if a drug with the same ID doesn't exist in the repository
 		*/
-		void deleteDrug(int id) const;
+		void deleteDrug(int id);
 
 		/*
 		* Method for deleting a Drug from the repository
@@ -43,7 +47,7 @@ class Service
 		* newPrice - double which represents the new price that will be modified
 		* Throws ServiceException if a drug with the same ID doesn't exist in the repository
 		*/
-		void updateDrug(int id, double newPrice) const;
+		void updateDrug(int id, double newPrice);
 
 		/*
 		* Method for finding a Drug from the repository
@@ -57,13 +61,13 @@ class Service
 		* Method for getting all the drugs from the repository
 		* Returns a constant reference to the list of drugs from the repository
 		*/
-		const std::vector<Drug>& getDrugs() const noexcept;
+		const std::vector<Drug>& getDrugs() const;
 
 		/*
 		* Method for finding the number of elements from the repository
 		* Returns an integer which represents the number of elements from the repository
 		*/
-		size_t getSize() const noexcept;
+		size_t getSize() const;
 
 		/*
 		* Method that sorts the contents of the repository based on a criteria
@@ -116,6 +120,17 @@ class Service
 		* Method for counting the number of drugs for all producers
 		*/
 		std::map<std::string, ProducerCount> countProducer() const;
+
+		/*
+		* Method for exporting the Recipe list in a file
+		* Throws ServiceException if the file cannot be opened
+		*/
+		void servExport(const std::string& file) const;
+
+		/*
+		* Method that implements the undo functionality
+		*/
+		void undo();
 };
 
 class ServiceException : public Error {
@@ -125,6 +140,8 @@ public:
 	static const std::string invalidFilteringCriteria;
 	static const std::string drugsAlreadyAddedOrNotFound;
 	static const std::string notEnoughDrugs;
+	static const std::string fileFail;
+	static const std::string undoFail;
 };
 
 

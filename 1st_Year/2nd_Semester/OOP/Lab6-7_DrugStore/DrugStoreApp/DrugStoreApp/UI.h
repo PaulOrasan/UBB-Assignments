@@ -5,7 +5,7 @@
 class UI
 {
 	private:
-		const Service& serv;
+		Service& serv;
 		void showMenu();
 		void uiAddDrug();
 		void uiDeleteDrug();
@@ -19,10 +19,12 @@ class UI
 		void uiEmptyPrescription() noexcept;
 		void uiGeneratePrescription();
 		void uiCountProducer();
+		void uiExportRecipe();
+		void uiUndo();
 		void showDrug(const Drug& drug);
 		void showDrugs(const std::vector<Drug>& v);
 	public:
-		UI(const Service& serv) noexcept : serv(serv)  {}
+		UI(Service& serv) noexcept : serv(serv)  {}
 		void runApp();
 		
 };

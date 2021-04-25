@@ -1,12 +1,15 @@
 #include "Tester.h"
 #include "Drug.h"
 #include "Validation.h"
-#include "Repository.h"
+#include "MemoryRepository.h"
 #include "Service.h"
 #include <cassert>
 #include "vector.h"
 #include <algorithm>
 #include <iostream>
+#include <sstream>
+#include "FileRepository.h"
+#include "ChaoticRepository.h"
 void Tester::runTests() {
 	domainTester.runTests();
 	validationTester.runTests();
@@ -116,9 +119,11 @@ void Tester::RepositoryTester::runTests() {
 	testDeleteDrug();
 	testUpdateDrug();
 	testSearchDrug();
+	testFileRepository();
+	testChaoticRepository();
 }
 void Tester::RepositoryTester::testAddDrug() {
-	Repository repoTest;
+	MemoryRepository repoTest;
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -141,7 +146,7 @@ void Tester::RepositoryTester::testAddDrug() {
 	}
 }
 void Tester::RepositoryTester::testDeleteDrug() {
-	Repository repoTest;
+	MemoryRepository repoTest;
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -173,7 +178,7 @@ void Tester::RepositoryTester::testDeleteDrug() {
 }
 
 void Tester::RepositoryTester::testUpdateDrug() {
-	Repository repoTest;
+	MemoryRepository repoTest;
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -189,7 +194,7 @@ void Tester::RepositoryTester::testUpdateDrug() {
 	}
 }
 void Tester::RepositoryTester::testSearchDrug() {
-	Repository repoTest;
+	MemoryRepository repoTest;
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -204,6 +209,103 @@ void Tester::RepositoryTester::testSearchDrug() {
 		assert(re.getMessage() == RepoException::drugDoesntExist);
 	}
 }
+
+void Tester::RepositoryTester::testFileRepository() {
+	std::ofstream fout("test.txt");
+	fout.close();
+	FileRepository repo{ "test.txt" };
+	assert(repo.getSize() == 0);
+	constexpr int id = 1;
+	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
+	constexpr double price = 25.67;
+	Drug drugTest{ id, name, producer, activeSubstance, price };
+	repo.addDrug(drugTest);
+	try {
+		FileRepository repo2{ "test2.txt" };
+	}
+	catch (const RepoException& e) {
+		assert(e.getMessage() == RepoException::fileFail);
+	}
+	FileRepository repo2{ "test.txt" };
+	assert(repo2.getSize() == 1);
+	try {
+		repo.addDrug(drugTest);
+	}
+	catch (const RepoException& e) {
+		assert(e.getMessage() == RepoException::drugExists);
+	}
+	repo.updateDrug(id, price + 1);
+	try {
+		repo.updateDrug(id + 1, price);
+	}
+	catch (const RepoException& e) {
+		assert(e.getMessage() == RepoException::drugDoesntExist);
+	}
+	repo.deleteDrug(id);
+	assert(repo.getSize() == 0);
+	try {
+		repo.deleteDrug(id);
+	}
+	catch (const RepoException& e) {
+		assert(e.getMessage() == RepoException::drugDoesntExist);
+	}
+	assert(repo.getDrugs().size() == 0);
+}
+
+void Tester::RepositoryTester::testChaoticRepository() {
+	constexpr int id = 1;
+	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
+	constexpr double price = 25.67;
+	Drug drugTest{ id, name, producer, activeSubstance, price };
+	ChaoticRepository repo{ 0 };
+	repo.addDrug(drugTest);
+	assert(repo.getSize() == 1);
+	assert(repo.getDrugs().size() == 1);
+	assert(repo.searchDrug(id) == drugTest);
+	try {
+		repo.searchDrug(id + 1);
+	}
+	catch (const RepoException& e) {
+		assert(e.getMessage() == RepoException::drugDoesntExist);
+	}
+	try {
+		repo.addDrug(drugTest);
+	}
+	catch (const RepoException& e) {
+		assert(e.getMessage() == RepoException::drugExists);
+	}
+	repo.updateDrug(id, price + 1);
+	try {
+		repo.updateDrug(id + 1, price);
+	}
+	catch (const RepoException& e) {
+		assert(e.getMessage() == RepoException::drugDoesntExist);
+	}
+	repo.deleteDrug(id);
+	try {
+		repo.deleteDrug(id);
+	}
+	catch (const RepoException& e) {
+		assert(e.getMessage() == RepoException::drugDoesntExist);
+	}
+	ChaoticRepository repo2{ 0.98 };
+	try {
+		repo.addDrug(drugTest);
+	}
+	catch (...) {
+	}
+	try {
+		repo.updateDrug(id + 1, price);
+	}
+	catch (...) {
+	}
+	try {
+		repo.deleteDrug(id);
+	}
+	catch (...) {
+		
+	}
+}
 void Tester::ServiceTester::runTests() {
 	testServiceAddDrug();
 	testServiceDeleteDrug();
@@ -214,12 +316,13 @@ void Tester::ServiceTester::runTests() {
 	testAddDrugsRecipe();
 	testGenerateRecipe();
 	testCountProducer();
+	testUndo();
 }
 
 void Tester::ServiceTester::testServiceAddDrug() {
-	Repository repo;
+	MemoryRepository repo;
 	Prescription pres;
-	const Service serv{ repo, pres };
+	Service serv{ repo, pres };
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -237,9 +340,9 @@ void Tester::ServiceTester::testServiceAddDrug() {
 }
 
 void Tester::ServiceTester::testServiceDeleteDrug() {
-	Repository repo;
+	MemoryRepository repo;
 	Prescription pres;
-	const Service serv{ repo, pres };
+	Service serv{ repo, pres };
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -256,9 +359,9 @@ void Tester::ServiceTester::testServiceDeleteDrug() {
 }
 
 void Tester::ServiceTester::testServiceUpdateDrug() {
-	Repository repo;
+	MemoryRepository repo;
 	Prescription pres;
-	const Service serv{ repo, pres };
+	Service serv{ repo, pres };
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -276,9 +379,9 @@ void Tester::ServiceTester::testServiceUpdateDrug() {
 }
 
 void Tester::ServiceTester::testServiceSearchDrug() {
-	Repository repo;
+	MemoryRepository repo;
 	Prescription pres;
-	const Service serv{ repo, pres };
+	Service serv{ repo, pres };
 	constexpr int id = 1;
 	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
 	constexpr double price = 25.67;
@@ -295,9 +398,9 @@ void Tester::ServiceTester::testServiceSearchDrug() {
 }
 
 void Tester::ServiceTester::testServiceSort() {
-	Repository repo;
+	MemoryRepository repo;
 	Prescription pres;
-	const Service serv{ repo, pres };
+	Service serv{ repo, pres };
 	serv.addDrug(1, "algocalmin", "terapia", "acetilnofenil", 1.23);
 	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 2.35);
 	serv.addDrug(3, "mizocalm", "paranus", "hotil", 0.29);
@@ -318,9 +421,9 @@ void Tester::ServiceTester::testServiceSort() {
 }
 
 void Tester::ServiceTester::testServiceFilter() {
-	Repository repo;
+	MemoryRepository repo;
 	Prescription pres;
-	const Service serv{ repo, pres };
+	Service serv{ repo, pres };
 	serv.addDrug(1, "algocalmin", "terapia", "acetilnofen", 1);
 	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
 	serv.addDrug(3, "mezocalm", "paranus", "acetilnofenil", 0.99);
@@ -330,9 +433,9 @@ void Tester::ServiceTester::testServiceFilter() {
 }
 
 void Tester::ServiceTester::testAddDrugsRecipe() {
-	Repository repo;
+	MemoryRepository repo;
 	Prescription pres;
-	const Service serv{ repo, pres };
+	Service serv{ repo, pres };
 	serv.addDrug(1, "algocalmin", "terapia", "acetilnofen", 1);
 	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
 	serv.addDrug(3, "mezocalm", "paranus", "acetilnofenil", 0.99);
@@ -356,9 +459,9 @@ void Tester::ServiceTester::testAddDrugsRecipe() {
 }
 
 void Tester::ServiceTester::testGenerateRecipe() {
-	Repository repo;
+	MemoryRepository repo;
 	Prescription pres;
-	const Service serv{ repo, pres };
+	Service serv{ repo, pres };
 	serv.addDrug(1, "algocalmin", "terapia", "acetilnofen", 1);
 	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
 	serv.addDrug(3, "mezocalm", "paranus", "acetilnofenil", 0.99);
@@ -375,9 +478,9 @@ void Tester::ServiceTester::testGenerateRecipe() {
 }
 
 void Tester::ServiceTester::testCountProducer() {
-	Repository repo;
+	MemoryRepository repo;
 	Prescription pres;
-	const Service serv{ repo, pres };
+	Service serv{ repo, pres };
 	serv.addDrug(1, "algocalmin", "terapia", "acetilnofen", 1);
 	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 1);
 	serv.addDrug(3, "mezocalm", "paranus", "acetilnofenil", 0.99);
@@ -388,4 +491,31 @@ void Tester::ServiceTester::testCountProducer() {
 	assert(dict["terapia"].getCount() == 1);
 	assert(dict["bayer"].getCount() == 1);
 	assert(dict["paranus"].getCount() == 3);
+}
+
+void Tester::ServiceTester::testUndo() {
+	MemoryRepository repo;
+	Prescription pres;
+	Service serv{ repo, pres };
+	constexpr int id = 1;
+	const std::string name{ "algocalmin" }, producer{ "terapia" }, activeSubstance{ "acetilnofen" };
+	constexpr double price = 25.67;
+	serv.addDrug(id, name, producer, activeSubstance, price);
+	serv.updateDrug(id, price + 1);
+	serv.deleteDrug(id);
+	assert(serv.getSize() == 0);
+	serv.undo();
+	assert(serv.getSize() == 1);
+	assert(serv.getDrugs().front().getPrice() == price + 1);
+	serv.undo();
+	assert(serv.getDrugs().front().getPrice() == price);
+	serv.undo();
+	assert(serv.getSize() == 0);
+	try {
+		serv.undo();
+	}
+	catch (const ServiceException& e) {
+		assert(e.getMessage() == ServiceException::undoFail);
+	}
+
 }

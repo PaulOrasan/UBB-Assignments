@@ -12,7 +12,8 @@ void Validation::validateID(const std::string& id) {
 void Validation::validatePrice(const std::string& price) {
 	int contor = 0;
 	bool notNumber = false;
-	for (auto& i : price) {
+	for (auto& it : price) {
+		unsigned char i = it;
 		if (i == '.')
 			contor++;
 		if (i != '.' && !isdigit(i))

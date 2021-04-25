@@ -3,43 +3,29 @@
   <DEFECT>
     <SFA>
       <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>Repository.cpp</FILENAME>
-      <LINE>36</LINE>
+      <FILENAME>Repository.h</FILENAME>
+      <LINE>9</LINE>
       <COLUMN>1</COLUMN>
     </SFA>
-    <DEFECTCODE>26489</DEFECTCODE>
-    <DESCRIPTION>Don't dereference a pointer that may be invalid: 'allotemp.7'. '(temporary 7)' may have been invalidated at line 36 (lifetime.1).</DESCRIPTION>
-    <FUNCTION>Repository::searchDrug</FUNCTION>
-    <DECORATED>?searchDrug@Repository@@QEBAAEBVDrug@@H@Z</DECORATED>
-    <FUNCLINE>30</FUNCLINE>
-    <PATH>
-      <SFA>
-        <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-        <FILENAME>Repository.cpp</FILENAME>
-        <LINE>36</LINE>
-        <COLUMN>1</COLUMN>
-      </SFA>
-    </PATH>
+    <DEFECTCODE>26455</DEFECTCODE>
+    <DESCRIPTION>Default constructor may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Repository::{ctor}</FUNCTION>
+    <DECORATED>??0Repository@@QEAA@XZ</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-      <FILENAME>Repository.cpp</FILENAME>
-      <LINE>36</LINE>
-      <COLUMN>1</COLUMN>
+      <FILENAME>Repository.h</FILENAME>
+      <LINE>43</LINE>
+      <COLUMN>10</COLUMN>
     </SFA>
-    <DEFECTCODE>26487</DEFECTCODE>
-    <DESCRIPTION>Don't return a pointer '(30's result)' that may be invalid (lifetime.4).</DESCRIPTION>
-    <FUNCTION>Repository::searchDrug</FUNCTION>
-    <DECORATED>?searchDrug@Repository@@QEBAAEBVDrug@@H@Z</DECORATED>
-    <FUNCLINE>30</FUNCLINE>
-    <PATH>
-      <SFA>
-        <FILEPATH>E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\</FILEPATH>
-        <FILENAME>Repository.cpp</FILENAME>
-        <LINE>36</LINE>
-        <COLUMN>1</COLUMN>
-      </SFA>
-    </PATH>
+    <DEFECTCODE>26432</DEFECTCODE>
+    <DESCRIPTION>If you define or delete any default operation in the type 'class Repository', define or delete them all (c.21).</DESCRIPTION>
+    <FUNCTION>Repository::{dtor}</FUNCTION>
+    <DECORATED>??1Repository@@UEAA@XZ</DECORATED>
+    <FUNCLINE>43</FUNCLINE>
+    <PATH></PATH>
   </DEFECT>
 </DEFECTS>

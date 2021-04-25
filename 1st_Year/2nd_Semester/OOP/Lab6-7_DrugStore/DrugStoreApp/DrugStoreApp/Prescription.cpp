@@ -26,3 +26,8 @@ void Prescription::emptyDrugs() noexcept {
 const std::vector<Drug>& Prescription::getAll() noexcept {
 	return prescriptionList;
 }
+
+void Prescription::exportList(std::ofstream& fout) const {
+	for (const auto& it : prescriptionList)
+		fout << it;
+}

@@ -2,6 +2,7 @@
 #define PRESCRIPTION_H
 #include <vector>
 #include "Drug.h"
+#include <fstream>
 class Prescription
 {
 private:
@@ -33,6 +34,12 @@ public:
 	* Method that gets all drug from the recipe based on the id if it exists
 	*/
 	const std::vector<Drug>& getAll() noexcept;
+
+	/*
+	* Method that writes all the drugs to an output file
+	* fout - ofstream reference to a valid opened file
+	*/
+	void exportList(std::ofstream& fout) const;
 };
 #endif
 

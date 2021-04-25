@@ -27,6 +27,7 @@ public:
 	int getCount() const  noexcept{
 		return count;
 	}
+
 };
 #endif
 

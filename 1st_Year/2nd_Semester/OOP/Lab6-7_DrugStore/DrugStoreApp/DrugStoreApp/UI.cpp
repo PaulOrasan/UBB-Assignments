@@ -59,12 +59,20 @@ void UI::runApp() {
 				uiCountProducer();
 				continue;
 			}
+			if (option == "13") {
+				uiExportRecipe();
+				continue;
+			}
+			if (option == "14") {
+				uiUndo();
+				continue;
+			}
 		}
 		catch (const Error& e) {
 			std::cout << e.getMessage() << '\n';
 			continue;
 		}
-		if (option == "13") {
+		if (option == "15") {
 			break;
 		}
 		std::cout << "Error: your input is invalid.\n";
@@ -83,7 +91,9 @@ void UI::showMenu() {
 	std::cout << "10. Empty prescription\n";
 	std::cout << "11. Generate prescription\n";
 	std::cout << "12. Count drugs by producer\n";
-	std::cout << "13. Exit\n";
+	std::cout << "13. Export recipe to file\n";
+	std::cout << "14. Undo last add/delete/update\n";
+	std::cout << "15. Exit\n";
 	std::cout << "Your input: ";
 }
 void UI::uiAddDrug() {
@@ -202,4 +212,15 @@ void UI::uiCountProducer() {
 	for (const auto& i : dict) {
 		std::cout << "For producer " << i.first << " we found " << i.second.getCount() << " drugs\n";
 	}
+}
+
+void UI::uiExportRecipe() {
+	std::cout << "Please input the name of the file: ";
+	std::string file;
+	std::getline(std::cin, file);
+	serv.servExport(file);
+}
+
+void UI::uiUndo() {
+	serv.undo();
 }

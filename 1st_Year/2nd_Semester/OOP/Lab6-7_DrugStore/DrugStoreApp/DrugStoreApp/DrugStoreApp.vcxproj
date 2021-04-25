@@ -144,27 +144,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ChaoticRepository.cpp" />
     <ClCompile Include="Drug.cpp" />
     <ClCompile Include="DrugStoreApp.cpp" />
     <ClCompile Include="Error.cpp" />
+    <ClCompile Include="FileRepository.cpp" />
     <ClCompile Include="Prescription.cpp" />
     <ClCompile Include="ProducerCount.cpp" />
+    <ClCompile Include="MemoryRepository.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="Tester.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UndoAction.cpp" />
+    <ClCompile Include="UndoAdd.cpp" />
+    <ClCompile Include="UndoDelete.cpp" />
+    <ClCompile Include="UndoUpdate.cpp" />
     <ClCompile Include="Validation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChaoticRepository.h" />
     <ClInclude Include="Drug.h" />
     <ClInclude Include="Error.h" />
+    <ClInclude Include="FileRepository.h" />
     <ClInclude Include="Prescription.h" />
     <ClInclude Include="ProducerCount.h" />
+    <ClInclude Include="MemoryRepository.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="Tester.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="UndoAction.h" />
+    <ClInclude Include="UndoAdd.h" />
+    <ClInclude Include="UndoDelete.h" />
+    <ClInclude Include="UndoUpdate.h" />
     <ClInclude Include="Validation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="database.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

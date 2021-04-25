@@ -1,21 +1,36 @@
 #include "Service.h"
 #include <algorithm>
 #include <iterator>
+#include <fstream>
+#include "UndoAdd.h"
+#include "UndoDelete.h"
+#include "UndoUpdate.h"
 
 const std::string ServiceException::invalidSortingCriteria{ "The comparison criteria is not valid!" };
 const std::string ServiceException::invalidFilteringCriteria{ "The condition criteria is not valid!" };
 const std::string ServiceException::drugsAlreadyAddedOrNotFound{ "All drugs with that name are already added on the recipe or no drug was found!" };
 const std::string ServiceException::notEnoughDrugs{ "Not enough drugs stored to generate that recipe!" };
-void Service::addDrug(int id, const std::string& name, const std::string& producer, const std::string& activeSubstance, double price) const {
+const std::string ServiceException::fileFail{ "The file cannot be opened!" };
+const std::string ServiceException::undoFail{ "Can't do undo anymore!" };
+
+void Service::addDrug(int id, const std::string& name, const std::string& producer, const std::string& activeSubstance, double price) {
 	Drug newDrug{ id, name, producer, activeSubstance, price };
 	try {
 		repo.addDrug(newDrug);
+		undoList.push(std::make_unique<UndoAdd>(repo, newDrug));
 	}
 	catch (const RepoException& re) {
 		throw ServiceException{ re.getMessage() };
 	}
 }
-void Service::deleteDrug(int id) const {
+void Service::deleteDrug(int id) {
+	try {
+		const Drug& drug{ repo.searchDrug(id) };
+		undoList.push(std::make_unique<UndoDelete>(repo, drug));
+	}
+	catch (...) {
+
+	}
 	try {
 		repo.deleteDrug(id);
 		prescription.deleteDrug(id);
@@ -24,7 +39,14 @@ void Service::deleteDrug(int id) const {
 		throw ServiceException{ re.getMessage() };
 	}
 }
-void Service::updateDrug(int id, double newPrice) const {
+void Service::updateDrug(int id, double newPrice) {
+	try {
+		const Drug& drug{ repo.searchDrug(id) };
+		undoList.push(std::make_unique<UndoUpdate>(repo, drug));
+	}
+	catch (...) {
+
+	}
 	try {
 		repo.updateDrug(id, newPrice);
 		prescription.deleteDrug(id);
@@ -42,10 +64,10 @@ const Drug& Service::findDrug(int id) const {
 		throw ServiceException{ re.getMessage() };
 	}
 }
-const std::vector<Drug>& Service::getDrugs() const noexcept {
+const std::vector<Drug>& Service::getDrugs() const {
 	return repo.getDrugs();
 }
-size_t Service::getSize() const noexcept {
+size_t Service::getSize() const {
 	return repo.getSize();
 }
 
@@ -141,4 +163,21 @@ std::map<std::string, ProducerCount> Service::countProducer() const {
 		}
 	}
 	return dict;
+}
+
+void Service::servExport(const std::string& file) const {
+	std::ofstream fout;
+	fout.open(file, std::ios::out | std::ios::trunc);
+	if (!fout.is_open())
+		throw ServiceException{ ServiceException::fileFail };
+	prescription.exportList(fout);
+	fout.close();
+}
+
+void Service::undo() {
+	if (undoList.size() == 0) {
+		throw ServiceException{ ServiceException::undoFail };
+	}
+	undoList.top()->doUndo();
+	undoList.pop();
 }

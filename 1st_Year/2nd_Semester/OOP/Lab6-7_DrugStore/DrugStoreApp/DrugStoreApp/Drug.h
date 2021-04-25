@@ -105,6 +105,11 @@ class Drug
 		void setPrice(double newPrice) noexcept {
 			price = newPrice;
 		}
+
+		/*
+		* Method for output operator
+		*/
+		friend std::ostream& operator<<(std::ostream& out, const Drug& d);
 };
 /*
 * Checks if two drug objects are equal (all atributtes must be equal)
