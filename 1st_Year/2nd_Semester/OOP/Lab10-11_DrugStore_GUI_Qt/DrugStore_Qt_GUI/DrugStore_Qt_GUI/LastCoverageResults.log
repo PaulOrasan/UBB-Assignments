@@ -1,0 +1,22 @@
+[2021-04-25 21:33:10] [info] Start Program:
+Path:"E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab10-11_DrugStore_GUI_Qt\\DrugStore_Qt_GUI\\x64\\Debug\\DrugStore_Qt_GUI.exe"
+Arguments:
+Working directory: "E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab10-11_DrugStore_GUI_Qt\\DrugStore_Qt_GUI\\DrugStore_Qt_GUI\\"
+Modules: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab10-11_DrugStore_GUI_Qt\DrugStore_Qt_GUI\x64\Debug\DrugStore_Qt_GUI.exe Excluded: 
+Sources: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab10-11_DrugStore_GUI_Qt\DrugStore_Qt_GUI\DrugStore_Qt_GUI Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\orasa\AppData\Local\Temp\kfiovhvx.z4k 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2021-04-25 21:33:10] [info] Module: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab10-11_DrugStore_GUI_Qt\DrugStore_Qt_GUI\x64\Debug\DrugStore_Qt_GUI.exe is selected because it matches selected pattern: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab10-11_DrugStore_GUI_Qt\DrugStore_Qt_GUI\x64\Debug\DrugStore_Qt_GUI.exe
+[2021-04-25 21:33:10] [info] ----------------------------------------------------
+[2021-04-25 21:33:10] [info] Coverage binary generated in file: C:\Users\orasa\AppData\Local\Temp\kfiovhvx.z4k
+[2021-04-25 21:33:10] [info] ----------------------------------------------------
+[2021-04-25 21:33:10] [error] Your program stop with error code: -1073741515

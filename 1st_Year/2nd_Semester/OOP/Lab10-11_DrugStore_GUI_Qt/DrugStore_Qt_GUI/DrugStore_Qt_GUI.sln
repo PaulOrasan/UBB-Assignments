@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DrugStore_Qt_GUI", "DrugStore_Qt_GUI\DrugStore_Qt_GUI.vcxproj", "{F66C48FD-86E5-4978-A18D-3EA9E2A11ED7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F66C48FD-86E5-4978-A18D-3EA9E2A11ED7}.Debug|x64.ActiveCfg = Debug|x64
+		{F66C48FD-86E5-4978-A18D-3EA9E2A11ED7}.Debug|x64.Build.0 = Debug|x64
+		{F66C48FD-86E5-4978-A18D-3EA9E2A11ED7}.Release|x64.ActiveCfg = Release|x64
+		{F66C48FD-86E5-4978-A18D-3EA9E2A11ED7}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4790039C-D866-47CD-B6E0-2CE0C0FDE935}
+	EndGlobalSection
+EndGlobal
