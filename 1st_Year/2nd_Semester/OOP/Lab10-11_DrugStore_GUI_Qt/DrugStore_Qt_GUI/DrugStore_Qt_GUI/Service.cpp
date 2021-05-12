@@ -72,27 +72,45 @@ size_t Service::getSize() const {
 	return repo.getSize();
 }
 
-std::vector<Drug> Service::sort(const std::string& criteria) const {
+std::vector<Drug> Service::sort(const std::string& criteria, const std::string& type) const {
 	std::vector<Drug> copy{ getDrugs() };
 	if (criteria == "name") {
-		std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second)noexcept {
-			return first.getName() <= second.getName();
-			});
+		if (type == "Increasing")
+			std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second)noexcept {
+				return first.getName() < second.getName();
+				});
+		else
+			std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second)noexcept {
+				return first.getName() > second.getName();
+					});
 		return copy;
 	}
 	else if (criteria == "producer") {
-		std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second)noexcept {
-			return first.getProducer() < second.getProducer();
-			});
+		if (type == "Increasing")
+			std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second)noexcept {
+				return first.getProducer() < second.getProducer();
+				});
+		else
+			std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second)noexcept {
+				return first.getProducer() > second.getProducer();
+				});
 		return copy;
 	}
 	else if (criteria == "substance&price") {
-		std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second) noexcept {
+		if (type == "Increasing")
+			std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second) noexcept {
+				if (first.getSubstance() == second.getSubstance()) {
+					return first.getPrice() < second.getPrice();
+				}
+				return first.getSubstance() < second.getSubstance();
+			});
+		else
+			std::sort(copy.begin(), copy.end(), [](const Drug& first, const Drug& second) noexcept {
 			if (first.getSubstance() == second.getSubstance()) {
-				return first.getPrice() < second.getPrice();
+				return first.getPrice() > second.getPrice();
 			}
-			return first.getSubstance() < second.getSubstance();
-		});
+			return first.getSubstance() > second.getSubstance();
+				});
 		return copy;
 	}
 	else {
@@ -103,18 +121,18 @@ std::vector<Drug> Service::sort(const std::string& criteria) const {
 std::vector<Drug> Service::filterPrice(double condition) const {
 	std::vector<Drug> copy{ getDrugs() };
 	auto it = remove_if(copy.begin(), copy.end(), [=](const Drug& element)noexcept {
-		return (element.getPrice() - condition <0.00001 && element.getPrice() - condition >-0.00001);
+		return !(element.getPrice() - condition <0.00001 && element.getPrice() - condition >-0.00001);
 		});
-	copy.assign(it, copy.end());
+	copy.assign(copy.begin(), it);
 	return copy;
 }
 
 std::vector<Drug> Service::filterSubstance(const std::string& condition) const {
 	std::vector<Drug> copy{ getDrugs() };
 	auto it = remove_if(copy.begin(), copy.end(), [=](const Drug& element)noexcept {
-		return element.getSubstance() == condition;
+		return element.getSubstance() != condition;
 		});
-	copy.assign(it, copy.end());
+	copy.assign(copy.begin(), it);
 	return copy;
 }
 

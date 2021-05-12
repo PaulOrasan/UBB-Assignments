@@ -34,6 +34,7 @@
     <QtInstall>5.15.2_msvc2019_64</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
+    <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>5.15.2_msvc2019_64</QtInstall>
@@ -61,6 +62,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -94,11 +97,14 @@
     <ClCompile Include="Drug.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="FileRepository.cpp" />
+    <ClCompile Include="FilterWindowGUI.cpp" />
     <ClCompile Include="MemoryRepository.cpp" />
     <ClCompile Include="Prescription.cpp" />
+    <ClCompile Include="PrescriptionWindowGUI.cpp" />
     <ClCompile Include="ProducerCount.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Service.cpp" />
+    <ClCompile Include="SortWindowGUI.cpp" />
     <ClCompile Include="Tester.cpp" />
     <ClCompile Include="UndoAction.cpp" />
     <ClCompile Include="UndoAdd.cpp" />
@@ -108,8 +114,8 @@
     <ClCompile Include="vector.cpp" />
     <QtRcc Include="MainGUI.qrc" />
     <QtUic Include="MainGUI.ui" />
-    <QtMoc Include="MainGUI.h" />
-    <ClCompile Include="MainGUI.cpp" />
+    <QtMoc Include="MainWindowGUI.h" />
+    <ClCompile Include="MainWindowGUI.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -117,11 +123,14 @@
     <ClInclude Include="Drug.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="FileRepository.h" />
+    <QtMoc Include="FilterWindowGUI.h" />
     <ClInclude Include="MemoryRepository.h" />
     <ClInclude Include="Prescription.h" />
+    <QtMoc Include="PrescriptionWindowGUI.h" />
     <ClInclude Include="ProducerCount.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Service.h" />
+    <QtMoc Include="SortWindowGUI.h" />
     <ClInclude Include="Tester.h" />
     <ClInclude Include="UndoAction.h" />
     <ClInclude Include="UndoAdd.h" />

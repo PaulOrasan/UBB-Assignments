@@ -75,7 +75,7 @@ class Service
 		* Returns a Vector of Drug elements which represents a copy of the repository that was also sorted
 		* Throws ServiceException if the criteria is unrecognisable
 		*/
-		std::vector<Drug> sort(const std::string& criteria) const;
+		std::vector<Drug> sort(const std::string& criteria, const std::string& type) const;
 
 		/*
 		* Method that filters the contents of the repository based on price

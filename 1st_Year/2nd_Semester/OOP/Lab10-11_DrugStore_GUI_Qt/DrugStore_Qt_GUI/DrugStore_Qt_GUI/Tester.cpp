@@ -404,20 +404,23 @@ void Tester::ServiceTester::testServiceSort() {
 	serv.addDrug(1, "algocalmin", "terapia", "acetilnofenil", 1.23);
 	serv.addDrug(2, "paracetamol", "bayer", "acetilnofenil", 2.35);
 	serv.addDrug(3, "mizocalm", "paranus", "hotil", 0.29);
-	std::vector<Drug> sorted1{ serv.sort("name") };
+	std::vector<Drug> sorted1{ serv.sort("name", "Increasing") };
 	std::vector<std::string> elems1;
 	assert(std::is_sorted(elems1.begin(), elems1.end()));
-	std::vector<Drug> sorted2{ serv.sort("producer") };
+	std::vector<Drug> sorted2{ serv.sort("producer", "Increasing") };
 	std::vector<std::string> elems2;
 	assert(std::is_sorted(elems2.begin(), elems2.end()));
-	std::vector<Drug>sorted3{ serv.sort("substance&price") };
+	std::vector<Drug>sorted3{ serv.sort("substance&price", "Increasing") };
 	assert(sorted3.size() == 3);
 	try {
-		std::vector<Drug>sorted4{ serv.sort("fdsaf") };
+		std::vector<Drug>sorted4{ serv.sort("fdsaf", "fdsf") };
 	}
 	catch (const ServiceException& e) {
 		assert(e.getMessage() == ServiceException::invalidSortingCriteria);
 	}
+	sorted1 = serv.sort("name", "Decreasing");
+	sorted1 = serv.sort("producer", "Decreasing");
+	sorted1 = serv.sort("substance&price", "Decreasing");
 }
 
 void Tester::ServiceTester::testServiceFilter() {

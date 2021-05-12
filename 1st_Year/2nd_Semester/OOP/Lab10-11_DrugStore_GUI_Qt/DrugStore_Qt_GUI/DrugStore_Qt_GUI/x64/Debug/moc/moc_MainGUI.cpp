@@ -55,7 +55,7 @@ static const uint qt_meta_data_MainGUI[] = {
        0        // eod
 };
 
-void MainGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -63,7 +63,7 @@ void MainGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject MainGUI::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
     qt_meta_stringdata_MainGUI.data,
     qt_meta_data_MainGUI,
@@ -73,12 +73,12 @@ QT_INIT_METAOBJECT const QMetaObject MainGUI::staticMetaObject = { {
 } };
 
 
-const QMetaObject *MainGUI::metaObject() const
+const QMetaObject *MainWindow::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *MainGUI::qt_metacast(const char *_clname)
+void *MainWindow::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_MainGUI.stringdata0))
@@ -86,7 +86,7 @@ void *MainGUI::qt_metacast(const char *_clname)
     return QWidget::qt_metacast(_clname);
 }
 
-int MainGUI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     return _id;

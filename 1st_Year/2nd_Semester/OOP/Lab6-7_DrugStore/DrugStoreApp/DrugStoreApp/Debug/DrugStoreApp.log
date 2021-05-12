@@ -1,6 +1,0 @@
-﻿  Service.cpp
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Service.cpp(120,13): warning C4018: '>': signed/unsigned mismatch
-E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp\Service.cpp(127,28): warning C4018: '<': signed/unsigned mismatch
-  Tester.cpp
-  Generating Code...
-  DrugStoreApp.vcxproj -> E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\Debug\DrugStoreApp.exe
