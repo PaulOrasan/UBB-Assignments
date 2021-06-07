@@ -1,0 +1,21 @@
+[2021-05-16 21:06:27] [info] Start Program:
+Path:"E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\MidExamPractice\\x64\\Debug\\MidExamPractice.exe"
+Arguments:
+Working directory: "E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\MidExamPractice\\MidExamPractice\\"
+Modules: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\MidExamPractice\x64\Debug\MidExamPractice.exe Excluded: 
+Sources: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\MidExamPractice\MidExamPractice Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\orasa\AppData\Local\Temp\jtxmeyxb.jer 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2021-05-16 21:06:27] [info] Module: E:\Facultate\1st_Year\2nd_Semester\OOP\MidExamPractice\x64\Debug\MidExamPractice.exe is selected because it matches selected pattern: E:\Facultate\1st_Year\2nd_Semester\OOP\MidExamPractice\x64\Debug\MidExamPractice.exe
+[2021-05-16 21:06:27] [info] ----------------------------------------------------
+[2021-05-16 21:06:27] [info] Coverage binary generated in file: C:\Users\orasa\AppData\Local\Temp\jtxmeyxb.jer
+[2021-05-16 21:06:27] [info] ----------------------------------------------------

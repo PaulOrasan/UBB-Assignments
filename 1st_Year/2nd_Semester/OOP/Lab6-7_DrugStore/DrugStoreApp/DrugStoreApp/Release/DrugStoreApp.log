@@ -1,0 +1,30 @@
+﻿  Drug.cpp
+  DrugStoreApp.cpp
+  Error.cpp
+  Repository.cpp
+  Service.cpp
+  Tester.cpp
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(60,29): warning C4101: 've': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(66,30): warning C4101: 've': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(72,30): warning C4101: 've': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(78,30): warning C4101: 've': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(88,30): warning C4101: 've': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(94,30): warning C4101: 've': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(100,30): warning C4101: 've': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(106,30): warning C4101: 've': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(136,24): warning C4101: 're': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(157,24): warning C4101: 're': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(167,24): warning C4101: 're': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(184,24): warning C4101: 're': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(200,24): warning C4101: 're': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(225,27): warning C4101: 'se': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(243,27): warning C4101: 'se': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(261,27): warning C4101: 'se': unreferenced local variable
+E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\DrugStoreApp\Tester.cpp(279,27): warning C4101: 'se': unreferenced local variable
+  UI.cpp
+  Validation.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 247 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  DrugStoreApp.vcxproj -> E:\Facultate\Anul 1\Semestrul 2\OOP\Lab6-7\DrugStoreApp\Release\DrugStoreApp.exe

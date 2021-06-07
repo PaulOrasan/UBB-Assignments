@@ -1,0 +1,21 @@
+[2021-05-17 11:35:52] [info] Start Program:
+Path:"E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\MidExam\\x64\\Debug\\MidExam.exe"
+Arguments:
+Working directory: "E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\MidExam\\MidExam\\"
+Modules: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\MidExam\x64\Debug\MidExam.exe Excluded: 
+Sources: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\MidExam\MidExam Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\orasa\AppData\Local\Temp\2hmluhfs.mml 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2021-05-17 11:35:52] [info] Module: E:\Facultate\1st_Year\2nd_Semester\OOP\MidExam\x64\Debug\MidExam.exe is selected because it matches selected pattern: E:\Facultate\1st_Year\2nd_Semester\OOP\MidExam\x64\Debug\MidExam.exe
+[2021-05-17 11:35:52] [info] ----------------------------------------------------
+[2021-05-17 11:35:52] [info] Coverage binary generated in file: C:\Users\orasa\AppData\Local\Temp\2hmluhfs.mml
+[2021-05-17 11:35:52] [info] ----------------------------------------------------

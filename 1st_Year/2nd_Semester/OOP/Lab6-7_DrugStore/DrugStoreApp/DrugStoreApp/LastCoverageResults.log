@@ -1,0 +1,21 @@
+[2021-04-19 11:47:53] [info] Start Program:
+Path:"E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab6-7_DrugStore\\DrugStoreApp\\x64\\Debug\\DrugStoreApp.exe"
+Arguments:
+Working directory: "E:\\Facultate\\1st_Year\\2nd_Semester\\OOP\\Lab6-7_DrugStore\\DrugStoreApp\\DrugStoreApp"
+Modules: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\x64\Debug\DrugStoreApp.exe Excluded: 
+Sources: Selected: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\DrugStoreApp Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\orasa\AppData\Local\Temp\zms5uomc.c0z 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2021-04-19 11:47:53] [info] Module: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\x64\Debug\DrugStoreApp.exe is selected because it matches selected pattern: E:\Facultate\1st_Year\2nd_Semester\OOP\Lab6-7_DrugStore\DrugStoreApp\x64\Debug\DrugStoreApp.exe
+[2021-04-19 11:47:53] [info] ----------------------------------------------------
+[2021-04-19 11:47:53] [info] Coverage binary generated in file: C:\Users\orasa\AppData\Local\Temp\zms5uomc.c0z
+[2021-04-19 11:47:53] [info] ----------------------------------------------------

@@ -1,0 +1,4 @@
+﻿  main.cpp
+  MidExam.vcxproj -> E:\Facultate\1st_Year\2nd_Semester\OOP\MidExam\x64\Debug\MidExam.exe
+  windeployqt: "E:/IDEs/Qt5/5.15.2/msvc2019_64/bin\windeployqt.exe" --list target --dir E:\Facultate\1st_Year\2nd_Semester\OOP\MidExam\x64\Debug\ E:\Facultate\1st_Year\2nd_Semester\OOP\MidExam\x64\Debug\MidExam.exe
+EXEC : warning : Cannot find Visual Studio installation directory, VCINSTALLDIR is not set.
