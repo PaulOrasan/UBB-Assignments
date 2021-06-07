@@ -1,9 +1,4 @@
-﻿  main.cpp
-  qrc_MainGUI.cpp
-  moc_MainWindowGUI.cpp
-  moc_FilterWindowGUI.cpp
-  moc_PrescriptionWindowGUI.cpp
-  moc_SortWindowGUI.cpp
+﻿  MainWindowGUI.cpp
   DrugStore_Qt_GUI.vcxproj -> E:\Facultate\1st_Year\2nd_Semester\OOP\Lab10-11_DrugStore_GUI_Qt\DrugStore_Qt_GUI\x64\Debug\DrugStore_Qt_GUI.exe
   windeployqt: "E:/IDEs/Qt5/5.15.2/msvc2019_64/bin\windeployqt.exe" --list target --dir E:\Facultate\1st_Year\2nd_Semester\OOP\Lab10-11_DrugStore_GUI_Qt\DrugStore_Qt_GUI\x64\Debug\ E:\Facultate\1st_Year\2nd_Semester\OOP\Lab10-11_DrugStore_GUI_Qt\DrugStore_Qt_GUI\x64\Debug\DrugStore_Qt_GUI.exe
 EXEC : warning : Cannot find Visual Studio installation directory, VCINSTALLDIR is not set.

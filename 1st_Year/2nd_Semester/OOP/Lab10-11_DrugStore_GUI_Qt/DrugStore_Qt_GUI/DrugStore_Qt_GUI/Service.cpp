@@ -202,3 +202,21 @@ void Service::undo() {
 	undoList.top()->doUndo();
 	undoList.pop();
 }
+
+Prescription& Service::getPrescription() const {
+	return prescription;
+}
+
+void Service::deleteDrugsProducer(const std::string& producer) {
+	bool found = false;
+	do {
+		found = false;
+		for (const auto& i : getDrugs()) {
+			if (i.getProducer() == producer) {
+				found = true;
+				deleteDrug(i.getID());
+				break;
+			}
+		}
+	} while (found == true);
+}

@@ -62,8 +62,9 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>26812;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -101,6 +102,7 @@
     <ClCompile Include="MemoryRepository.cpp" />
     <ClCompile Include="Prescription.cpp" />
     <ClCompile Include="PrescriptionWindowGUI.cpp" />
+    <ClCompile Include="PrescriptionWindowReadOnlyGUI.cpp" />
     <ClCompile Include="ProducerCount.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Service.cpp" />
@@ -125,8 +127,10 @@
     <ClInclude Include="FileRepository.h" />
     <QtMoc Include="FilterWindowGUI.h" />
     <ClInclude Include="MemoryRepository.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="Prescription.h" />
     <QtMoc Include="PrescriptionWindowGUI.h" />
+    <QtMoc Include="PrescriptionWindowReadOnlyGUI.h" />
     <ClInclude Include="ProducerCount.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Service.h" />

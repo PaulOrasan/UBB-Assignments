@@ -356,6 +356,10 @@ void Tester::ServiceTester::testServiceDeleteDrug() {
 	catch (const ServiceException& se) {
 		assert(se.getMessage() == RepoException::drugDoesntExist);
 	}
+	serv.addDrug(id, name, producer, activeSubstance, price);
+	serv.deleteDrugsProducer(producer);
+	assert(serv.getSize() == 0);
+	serv.getPrescription();
 }
 
 void Tester::ServiceTester::testServiceUpdateDrug() {

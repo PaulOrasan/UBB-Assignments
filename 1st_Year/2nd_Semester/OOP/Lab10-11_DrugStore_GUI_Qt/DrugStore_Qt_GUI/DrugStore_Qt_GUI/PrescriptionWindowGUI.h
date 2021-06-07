@@ -5,7 +5,9 @@
 #include "Service.h"
 #include <QPushButton>
 #include <QLineEdit>
-class PrescriptionWindow : public QWidget
+#include "Observer.h"
+#include <QListWidget>
+class PrescriptionWindow : public QWidget, public Observer
 {
 	Q_OBJECT
 private:
@@ -17,12 +19,15 @@ private:
 	QPushButton* generateButton;
 	QPushButton* exportButton;
 	QPushButton* exitButton;
+	QListWidget* drugList;
 	void initGUI();
 	void connectSignalsSlots();
 	void addDrugRecipe();
 	void emptyRecipe();
 	void generateRecipe();
 	void exportRecipe();
+	void update() override;
+	void loadList();
 public:
 	PrescriptionWindow(Service& serv);
 };

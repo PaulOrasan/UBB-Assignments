@@ -94,6 +94,9 @@
     <ClCompile Include="PrescriptionWindowGUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PrescriptionWindowReadOnlyGUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tester.h">
@@ -144,6 +147,9 @@
     <ClInclude Include="Validation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MainWindowGUI.h">
@@ -156,6 +162,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="PrescriptionWindowGUI.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PrescriptionWindowReadOnlyGUI.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

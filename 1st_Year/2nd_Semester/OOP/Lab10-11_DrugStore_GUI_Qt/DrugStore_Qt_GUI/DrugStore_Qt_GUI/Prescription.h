@@ -3,7 +3,8 @@
 #include <vector>
 #include "Drug.h"
 #include <fstream>
-class Prescription
+#include "Observer.h"
+class Prescription : public Observable
 {
 private:
 	std::vector<Drug> prescriptionList;

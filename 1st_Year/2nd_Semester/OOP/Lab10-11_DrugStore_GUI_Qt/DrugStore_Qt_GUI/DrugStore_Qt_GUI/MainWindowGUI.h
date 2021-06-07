@@ -16,6 +16,7 @@ private:
     QHBoxLayout* mainLayout;
     QVBoxLayout* leftLayout;
     QVBoxLayout* rightLayout;
+    QFormLayout* rightmostLayout;
     QListWidget* showScreen;
     QFormLayout* inputFormLayout;
     QSpinBox* idSpinBox;
@@ -23,6 +24,7 @@ private:
     QLineEdit* producerLineEdit;
     QLineEdit* substanceLineEdit;
     QLineEdit* priceLineEdit;
+    QLineEdit* prescriptionLineEdit;
     QHBoxLayout* buttonLayout1;
     QPushButton* addButton;
     QPushButton* updateButton;
@@ -34,6 +36,12 @@ private:
     QPushButton* sortButton;
     QPushButton* filterButton;
     QPushButton* prescriptionButton;
+    QPushButton* addDrugPrescriptionButton;
+    QPushButton* emptyRecipeButton;
+    QPushButton* generateRecipeButton;
+    QPushButton* prescriptionReadOnlyButton;
+    QPushButton* undoButton;
+    std::vector<QPushButton*> deleteButtons;
     void initGUI();
     void connectSignalsSlots();
     void addDrug();
@@ -49,6 +57,13 @@ private:
     void prescriptionOptions();
     QString convertDrug(const Drug&);
     void loadList(const std::vector<Drug>&);
+    void addDrugPrescription();
+    void emptyPrescription();
+    void generatePresccription();
+    void prescriptionReadOnly();
+    void deleteProducers();
+    void undo();
+    void updateDeleteButtons();
 
 public:
     MainWindow(Service& service);

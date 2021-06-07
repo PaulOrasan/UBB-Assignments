@@ -131,6 +131,10 @@ class Service
 		* Method that implements the undo functionality
 		*/
 		void undo();
+
+		Prescription& getPrescription() const;
+
+		void deleteDrugsProducer(const std::string& s);
 };
 
 class ServiceException : public Error {

@@ -8,6 +8,9 @@
 #include "SortWindowGUI.h"
 #include "FilterWindowGUI.h"
 #include "PrescriptionWindowGUI.h"
+#include "PrescriptionWindowReadOnlyGUI.h"
+#include <set>
+#include <map>
 MainWindow::MainWindow(Service& service) : serv{ service } {
 	initGUI();
 	connectSignalsSlots();
@@ -67,8 +70,25 @@ void MainWindow::initGUI() {
 	rightLayout->addWidget(searchButton);
 	rightLayout->addWidget(showButton);
 	rightLayout->addWidget(exitButton);
+
+	rightmostLayout = new QFormLayout(this);
+	prescriptionLineEdit = new QLineEdit(this);
+	addDrugPrescriptionButton = new QPushButton("Add drug to recipe", this);
+	emptyRecipeButton = new QPushButton("Empty recipe", this);
+	generateRecipeButton = new QPushButton("Generate recipe", this);
+	prescriptionReadOnlyButton = new QPushButton("Prescription read only", this);
+	undoButton = new QPushButton("Undo", this);
+
+	rightmostLayout->addRow("Recipe input:", prescriptionLineEdit);
+	rightmostLayout->addRow(addDrugPrescriptionButton);
+	rightmostLayout->addRow(emptyRecipeButton);
+	rightmostLayout->addRow(generateRecipeButton);
+	rightmostLayout->addRow(prescriptionReadOnlyButton);
+	rightmostLayout->addRow(undoButton);
+
 	mainLayout->addLayout(leftLayout);
 	mainLayout->addLayout(rightLayout);
+	mainLayout->addLayout(rightmostLayout);
 }
 
 void MainWindow::connectSignalsSlots() {
@@ -82,13 +102,20 @@ void MainWindow::connectSignalsSlots() {
 	QObject::connect(sortButton, &QPushButton::clicked, this, &MainWindow::getSortDrugsDetails);
 	QObject::connect(filterButton, &QPushButton::clicked, this, &MainWindow::getFilterDrugsDetails);
 	QObject::connect(prescriptionButton, &QPushButton::clicked, this, &MainWindow::prescriptionOptions);
+	QObject::connect(addDrugPrescriptionButton, &QPushButton::clicked, this, &MainWindow::addDrugPrescription);
+	QObject::connect(emptyRecipeButton, &QPushButton::clicked, this, &MainWindow::emptyPrescription);
+	QObject::connect(generateRecipeButton, &QPushButton::clicked, this, &MainWindow::generatePresccription);
+	QObject::connect(prescriptionReadOnlyButton, &QPushButton::clicked, this, &MainWindow::prescriptionReadOnly);
+	QObject::connect(undoButton, &QPushButton::clicked, this, &MainWindow::undo);
 }
 
 void MainWindow::addDrug() {
 	try {
 		serv.addDrug(idSpinBox->text().toInt() , nameLineEdit->text().toStdString(), producerLineEdit->text().toStdString(),
 			substanceLineEdit->text().toStdString(), stod(priceLineEdit->text().toStdString()));
+		showDrugs();
 		QMessageBox::information(this, "Success", "The new drug was added successfully.");
+		updateDeleteButtons();
 	}
 	catch (const Error& e) {
 		QMessageBox::critical(this, "Error", QString::fromStdString(e.getMessage()));
@@ -98,6 +125,7 @@ void MainWindow::updateDrug() {
 	try {
 		serv.updateDrug(idSpinBox->text().toInt(), stod(priceLineEdit->text().toStdString()));
 		QMessageBox::information(this, "Success", "The drug was updated successfully.");
+		showDrugs();
 	}
 	catch (const Error& e) {
 		QMessageBox::critical(this, "Error", QString::fromStdString(e.getMessage()));
@@ -107,6 +135,8 @@ void MainWindow::deleteDrug() {
 	try {
 		serv.deleteDrug(idSpinBox->text().toInt());
 		QMessageBox::information(this, "Success", "The drug was deleted successfully.");
+		showDrugs();
+		updateDeleteButtons();
 	}
 	catch (const Error& e) {
 		QMessageBox::critical(this, "Error", QString::fromStdString(e.getMessage()));
@@ -126,6 +156,7 @@ void MainWindow::loadList(const std::vector<Drug>& v) {
 	showScreen->clear();
 	for (const auto& i : v) {
 		auto item{ new QListWidgetItem(convertDrug(i), showScreen) };
+		showScreen->addItem(item);
 	}
 }
 void MainWindow::showDrugs() {
@@ -206,4 +237,109 @@ void MainWindow::filterDrugs(QString type, QVariant condition) {
 void MainWindow::prescriptionOptions() {
 	PrescriptionWindow* window = new PrescriptionWindow(serv);
 	window->show();
+	serv.getPrescription().addObserver(window);
+}
+
+
+void MainWindow::addDrugPrescription() {
+	try {
+		serv.addDrugRecipe(prescriptionLineEdit->text().toStdString());
+		QMessageBox::information(this, "Success", "The drug was added to recipe.");
+	}
+	catch (const Error& e) {
+		QMessageBox::critical(this, "Error", QString::fromStdString(e.getMessage()));
+	}
+}
+void MainWindow::emptyPrescription() {
+	serv.emptyRecipe();
+	QMessageBox::information(this, "Success", "The recipe was emptied.");
+}
+void MainWindow::generatePresccription() {
+	try {
+		Validation::validateID(prescriptionLineEdit->text().toStdString());
+		serv.generateRecipe(prescriptionLineEdit->text().toInt());
+		QMessageBox::information(this, "Success", "The recipe was generated successfully.");
+	}
+	catch (const Error& e) {
+		QMessageBox::critical(this, "Error", QString::fromStdString(e.getMessage()));
+	}
+}
+
+void MainWindow::prescriptionReadOnly() {
+	PrescriptionWindowReadOnly* w = new PrescriptionWindowReadOnly(serv);
+	serv.getPrescription().addObserver(w);
+	w->show();
+}
+
+//void MainWindow::deleteProducers() {
+//	std::set<std::string>producers;
+//	for (const auto& i : serv.getDrugs()) {
+//		producers.insert(i.getProducer());
+//	}
+//	QWidget* w = new QWidget(this, Qt::Window);
+//	QVBoxLayout* layout = new QVBoxLayout(w);
+//	w->setLayout(layout);
+//	for (const auto& i : producers) {
+//		QPushButton* button = new QPushButton(QString::fromStdString(i), w);
+//		layout->addWidget(button);
+//		QObject::connect(button, &QPushButton::clicked, this, [=]() {
+//			serv.deleteDrugsProducer(button->text().toStdString());
+//			this->showDrugs();
+//			button->setVisible(false);
+//			layout->removeWidget(button);
+//			delete button;
+//			if (layout->count() == 0) {
+//				layout->parentWidget()->close();
+//			}
+//			});
+//	}
+//	w->show();
+//}
+
+void MainWindow::undo() {
+	try {
+		serv.undo();
+		updateDeleteButtons();
+		showDrugs();
+	}
+	catch (const ServiceException& e) {
+		QMessageBox::information(this, "Error", "Ain't gonna do any more undo");
+	}
+}
+
+void MainWindow::updateDeleteButtons() {
+	std::map<std::string, int> producers;
+	for (const auto& i : deleteButtons) {
+		producers.insert(std::make_pair(i->text().toStdString(), 0));
+	}
+	for (const auto& j : serv.getDrugs()) {
+		if (producers.find(j.getProducer()) == producers.end()) {
+			producers.insert(std::make_pair(j.getProducer(),1));
+			QPushButton* button = new QPushButton(QString::fromStdString(j.getProducer()), this);
+			deleteButtons.push_back(button);
+			rightmostLayout->addRow(button);
+			QObject::connect(button, &QPushButton::clicked, this, [=]() {
+				serv.deleteDrugsProducer(button->text().toStdString());
+				updateDeleteButtons();
+				this->showDrugs();
+				/*button->setVisible(false);
+				rightmostLayout->removeWidget(button);*/
+				});
+		}
+		else {
+			producers[j.getProducer()]++;
+		}
+	}
+	for (const auto& j : producers) {
+		if (j.second == 0) {
+			for (std::vector<QPushButton*>::iterator i = deleteButtons.begin(); i < deleteButtons.end(); i++) {
+				if ((*i)->text().toStdString() == j.first) {
+					(*i)->setVisible(false);
+					rightmostLayout->removeWidget(*i);
+					deleteButtons.erase(i);
+					break;
+				}
+			}
+		}
+	}
 }
