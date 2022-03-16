@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html lang="ro">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Html5 </title>
+</head>
+<body>
+  <div>
+      <h1>Bun venit.</h1>
+      <fieldset>
+        <legend>Despre website</legend>
+        Acesta este un formular pentru a depune o cerere de acordare a unui wildcard la un turneu internațional de tenis pentru foști juniori.
+        Aceasta este versiunea in <span><strong>html5</strong></span>.
+        Dati click <a href="https://www.scs.ubbcluj.ro/~opir2983/lab1/html4"> aici</a>
+        pentru versiunea in html4.
+        <br>
+        <img src="./frt.png" alt="Valid HTML 5" height="180" width="180">
+      </fieldset>
+      <br>
+  </div>
+  <div>
+      <form action="https://www.scs.ubbcluj.ro/~opir2983/lab1/html5">
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="4">
+                <h2>Formular pentru cerere de acordare wildcard la turneu</h2>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <h3>Datele personale ale jucătorului sau jucătoarei</h3>
+              </td>
+            </tr>
+            <tr>
+              <td><b>Prenume</b> </td>
+              <td><input type="text"> </td>
+              <td><b>Nume de familie</b> </td>
+              <td><input type="text"> </td>
+            </tr>
+            <tr>
+              <td><b>Email</b> </td>
+              <td><input type="text"> </td>
+              <td><b>Număr telefon</b> </td>
+              <td><input type="text"> </td>
+            </tr>
+            <tr>
+              <td><b>Gender</b></td>
+              <td>
+                <input type="radio" name="gender" value="feminin"> Feminin <br>
+                <input type="radio" name="gender" value="masculin"> Masculin <br>
+                <input type="radio" name="gender" value="nespecificat"> Nespecificat <br>
+              </td>
+              <td rowspan="2"><b>Data nașterii(d/m/y)</b></td>
+              <td rowspan="2">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>D</td>
+                      <td>
+                        <input type="text" style="width: 2em">
+                      </td>
+                      <td>M</td>
+                      <td>
+                        <input type="text" style="width: 2em">
+                      </td>
+                      <td>Y</td>
+                      <td>
+                        <input type="text" style="width: 4em">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><b>Țară</b> </td>
+              <td><input type="text" value="România" readonly="readonly" disabled="disabled"> </td>
+            </tr>
+            <tr>
+              <td><b>Județ</b></td>
+              <td><input type="text"> </td>
+              <td><b>Oraș</b></td>
+              <td><input type="text"> </td>
+            </tr>
+            <tr>
+              <td><b>Adresă</b></td>
+              <td><input type="text"> </td>
+              <td><b>Cod poștal</b></td>
+              <td><input type="text" maxlength="6"> </td>
+            </tr>
+            <tr>
+              <td rowspan="2"><b>Numele turneului</b></td>
+              <td rowspan="2"><input type="text"> </td>
+              <td><b>Numele antrenorului</b></td>
+              <td><input type="text"> </td>
+            </tr>
+            <tr>
+              <td><b>Circuit</b></td>
+              <td><select name="Circuit">
+                  <option value="WTA">WTA</option>
+                  <option value="ATP" selected="selected">ATP</option>
+                  <option value="ITF">ITF</option>
+                </select> </td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <h3>Despre tine</h3>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1"><b>Motivație</b> </td>
+              <td colspan="3"><textarea cols="70" rows="7"></textarea> </td>
+            </tr>
+            <tr>
+              <td><b>Cele mai bune rezultate la juniori în:</b></td>
+              <td colspan="3">
+                <ol start="0">
+                  <li>România:
+                    <ul>
+                      <li>Campionatul național <input type="text"></li>
+                      <li>Concursurile federației <input type="text"></li>
+                    </ul>
+
+                  </li>
+                  <li>Fed Cup / Cupa Davis:<input type="text"></li>
+                  <li>Turnee ITF:
+                    <ul>
+                      <li>Grad B<input type="text"></li>
+                      <li>Grad C<input type="text"></li>
+                      <li>Grad 1-5<input type="text"></li>
+                    </ul>
+                  </li>
+                  <li>Turnee de Mare Șlem:
+                    <ul>
+                      <li>Australian Open<input type="text"></li>
+                      <li>Roland Garros<input type="text"></li>
+                      <li>Wimbledon<input type="text"></li>
+                      <li>US Open<input type="text"></li>
+                    </ul>
+                  </li>
+                </ol>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Caracteristici</b>
+              </td>
+              <td colspan="3">
+                <table>
+                  <tbody>
+                    <tr>
+                      <th> </th>
+                      <th> Priză </th>
+                      <th> Mână </th>
+                    </tr>
+                    <tr>
+                      <td><b>Lovitură de dreapta</b></td>
+                      <td><input type="text" size="15"></td>
+                      <td><select multiple="multiple">
+                          <option value="dreapta" selected="selected">dreapta</option>
+                          <option value="stânga">stânga</option>
+                          <option value="ambele">ambele</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                      <td><b>Lovitură de rever</b></td>
+                      <td><input type="text" size="15"></td>
+                      <td><select multiple="multiple">
+                          <option value="dreapta" selected="selected">dreapta</option>
+                          <option value="stânga">stânga</option>
+                          <option value="ambele">ambele</option>
+                        </select></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <table>
+                  <tbody>
+                    <tr>
+                      <th> Înălțime </th>
+                      <th> Greutate </th>
+                    </tr>
+                    <tr>
+                      <td><input type="text">cm</td>
+                      <td><input type="text">kg</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Aptitudini</b>
+              </td>
+              <td colspan="3"> <input type="checkbox"> joc de contră <input type="checkbox"> joc defensiv <input type="checkbox"> variație <input type="checkbox"> joc la fileu <input type="checkbox"> serviciu plat <input type="checkbox"> serviciu
+                kick <input type="checkbox"> seriviciu slice
+                <br>
+                <input type="checkbox"> lovituri slice <input type="checkbox"> lovituri scurte <input type="checkbox"> joc de pe linia de fund
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Alte întrebări</b>
+              </td>
+              <td colspan="3"><label>Sunteți capabil de a vă asigura cazarea proprie la o eventuală relocare?</label><br>
+                <input type="radio" name="hotel" value="Da">
+                Da
+                <input type="radio" name="hotel" value="Nu">
+                Nu<br>
+                <label>Solicitați suportul federației pentru echipa de antrenament</label><br>
+                <input type="radio" name="antrenor" value="romana">
+                Am antrenor propiu
+                <input type="radio" name="antrenor" value="engleza">
+                Am nevoie de echipă<br>
+            </tr>
+            <tr>
+              <td colspan="4" rowspan="1"><b>Confirm că am citit și voi respecta termenii și condițiile federației</b> <input type="checkbox">
+                <br>
+                <b>Sunt membru activ al federației</b> <input type="checkbox" checked="checked">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4" rowspan="1">
+                <input type="submit" value="Submit Form"> &nbsp;&nbsp;
+                <input type="reset">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+  </div>
+  <p>
+    <a href="http://validator.w3.org/check?uri=https://www.scs.ubbcluj.ro/~opir2983/lab1/html5/"><img src="./validhtml5.png" alt="Valid HTML 5" height="31" width="88"></a>
+  </p>
+</body>
+</html>

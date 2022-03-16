@@ -2,23 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84997ec5-cc20-4cb8-b082-c33fdf8900ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpressionAddition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpressionDivision.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpressionMultiplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpressionSubtraction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ComplexExpression/Operation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/ComplexNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ExpressionWorkers/ExpressionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ExpressionWorkers/ExpressionParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled104.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/workers/ExpressionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/workers/ExpressionParserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/container/Container.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/container/QueueContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/container/StackContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/container/Strategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/factory/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/factory/TaskContainerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/model/MessageTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/model/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/runner/AbstractTaskRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/runner/PrinterTaskRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/runner/StrategyTaskRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/runner/TaskRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Seminaries/1st_Seminar/src/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/ComplexExpression/ComplexExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/ComplexExpression/ComplexExpressionAddition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/ComplexExpression/ComplexExpressionDivision.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/ComplexExpression/ComplexExpressionMultiplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/ComplexExpression/ComplexExpressionSubtraction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/ComplexExpression/Operation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/Domain/ComplexNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/Domain/ComplexNumber.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/ExpressionWorkers/ExpressionFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/ExpressionWorkers/ExpressionFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/ComplexExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpressionAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/ComplexExpressionAddition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpressionDivision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/ComplexExpressionDivision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpressionMultiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/ComplexExpressionMultiplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComplexExpression/ComplexExpressionSubtraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/ComplexExpressionSubtraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComplexExpression/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/ComplexNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/ComplexNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExpressionWorkers/ExpressionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/workers/ExpressionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExpressionWorkers/ExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/workers/ExpressionParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled104.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +49,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1ymgXJCANKGIZmi1EamLwFemxmA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -97,22 +127,130 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="workers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.main">
+    <configuration name="main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
       <module name="untitled104" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <option name="PROGRAM_PARAMETERS" value="2.5+3.5*i + 2-0.5*i + -3*i" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ExpressionParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled104" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="workers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="workers" />
+      <option name="MAIN_CLASS_NAME" value="workers.ExpressionParserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExpressionParserTest.validateCorrectExpression3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled104" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="workers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="workers" />
+      <option name="MAIN_CLASS_NAME" value="workers.ExpressionParserTest" />
+      <option name="METHOD_NAME" value="validateCorrectExpression3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExpressionParserTest.validateCorrectExpression4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled104" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="workers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="workers" />
+      <option name="MAIN_CLASS_NAME" value="workers.ExpressionParserTest" />
+      <option name="METHOD_NAME" value="validateCorrectExpression4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExpressionParserTest.validateCorrectExpression5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled104" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="workers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="workers" />
+      <option name="MAIN_CLASS_NAME" value="workers.ExpressionParserTest" />
+      <option name="METHOD_NAME" value="validateCorrectExpression5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExpressionParserTest.validateCorrectExpression6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled104" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="workers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="workers" />
+      <option name="MAIN_CLASS_NAME" value="workers.ExpressionParserTest" />
+      <option name="METHOD_NAME" value="validateCorrectExpression6" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.main" />
+      <item itemvalue="JUnit.ExpressionParserTest" />
+      <item itemvalue="JUnit.ExpressionParserTest.validateCorrectExpression3" />
+      <item itemvalue="JUnit.ExpressionParserTest.validateCorrectExpression4" />
+      <item itemvalue="JUnit.ExpressionParserTest.validateCorrectExpression5" />
+      <item itemvalue="JUnit.ExpressionParserTest.validateCorrectExpression6" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ExpressionParserTest" />
+        <item itemvalue="JUnit.ExpressionParserTest.validateCorrectExpression6" />
+        <item itemvalue="JUnit.ExpressionParserTest.validateCorrectExpression5" />
+        <item itemvalue="JUnit.ExpressionParserTest.validateCorrectExpression3" />
+        <item itemvalue="JUnit.ExpressionParserTest.validateCorrectExpression4" />
       </list>
     </recent_temporary>
   </component>
@@ -137,5 +275,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="argument.length()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
